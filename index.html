@@ -1,1 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuibai Zhang (张水柏) | University of Wisconsin-Madison</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.5;
+            font-size: 14px; /* Slightly smaller font size */
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 40px;
+            gap: 60px;
+        }
 
+        /* Sidebar styles */
+        .sidebar {
+            width: 30%;
+            text-align: center;
+        }
+        .sidebar img {
+            width: 239px; /* Slightly smaller image */
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .sidebar h1 {
+            font-size: 1.4rem; /* Slightly smaller font size */
+            color: #003366;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .sidebar p {
+            margin: 5px 0;
+            font-size: 0.85rem; /* Smaller font size */
+            color: #555;
+        }
+        .sidebar .social-icons a {
+            margin: 0 8px;
+            color: #333;
+            font-size: 0.9rem; /* Smaller icon size */
+        }
+        .sidebar .social-icons a:hover {
+            color: #0056b3;
+        }
+
+        /* Main content styles */
+        .main-content {
+            width: 70%;
+        }
+        .main-content h2 {
+            font-size: 1.3rem; /* Slightly smaller font size */
+            color: #003366;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .main-content p {
+            font-size: 0.85rem; /* Smaller font size */
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        /* Publications styles */
+        .publications .publication {
+            margin-bottom: 15px;
+        }
+        .publications .publication .title {
+            font-weight: 700;
+            font-size: 0.95rem; /* Smaller font size */
+            margin-bottom: 5px;
+            color: #0056b3;
+        }
+        .publications .publication .author {
+            font-size: 0.8rem; /* Smaller font size */
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .publications .publication .author strong {
+            color: #333;
+        }
+        .publications .publication .periodical {
+            font-size: 0.75rem; /* Smaller font size */
+            color: #888;
+        }
+        .publications .publication .equal-contribution {
+            color: red;
+            font-size: 0.75rem; /* Smaller font size */
+            margin-left: 5px;
+        }
+
+        /* Experience styles */
+        .experience {
+            margin-top: 15px;
+        }
+        .experience .job {
+            margin-bottom: 15px;
+        }
+        .experience .job .title {
+            font-weight: 700;
+            font-size: 0.95rem; /* Smaller font size */
+            margin-bottom: 5px;
+        }
+        .experience .job .location {
+            font-size: 0.8rem; /* Smaller font size */
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .experience .job .date {
+            font-size: 0.75rem; /* Smaller font size */
+            color: #888;
+        }
+        .experience .job .mentor {
+            font-size: 0.8rem; /* Smaller font size */
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="assets/img/shuibai_profile.JPG" alt="Shuibai Zhang">
+            <h1>Shuibai Zhang (张水柏)</h1>
+            <p>Ph.D. Student, Computer Science</p>
+            <p>University of Wisconsin-Madison</p>
+            <p>Email: <a href="mailto:shuibai@cs.wisc.edu">shuibai@cs.wisc.edu</a></p>
+            <div class="social-icons">
+                <a href="https://scholar.google.com/citations?user=jkXzD7YAAAAJ&hl" title="Google Scholar">
+                    <i class="fas fa-graduation-cap"></i> <!-- Google Scholar Icon -->
+                </a>
+                <a href="https://github.com/zhangshuibai" title="GitHub"><i class="fab fa-github"></i></a>
+                <!-- <a href="https://www.linkedin.com/in/your-linkedin/" title="LinkedIn"><i class="fab fa-linkedin"></i></a> -->
+                <a href="https://x.com/ShuibaiZ69721" title="Twitter (X)"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>About Me</h2>
+            <p>I am a first-year Computer Science Ph.D. student at the University of Wisconsin-Madison, fortunate to be supervised by <a href="https://kangwooklee.com/aboutme/" target="_blank">Professor Kangwook Lee</a>. My research interests include multimodal learning, large language models, and their theoretical foundations.</p>
+
+            <h2>Papers</h2>
+            <div class="publications">
+                <div class="publication">
+                    <div class="title"><a href="#">VersaPRM: Multi-Domain Process Reward Model via Synthetic Reasoning Data</a></div>
+                    <div class="author">Thomas Zeng, <strong>Shuibai Zhang</strong>, et al., Kannan Ramchandran, Dimitris Papailiopoulos, Kangwook Lee</div>
+                    <div class="periodical"><em>ICML 2025 Under Review</em></div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="#">Dynamic Multimodal Evaluation with Flexible Complexity by Vision-Language Bootstrapping</a></div>
+                    <div class="author">Yue Yang*, <strong>Shuibai Zhang*</strong>, Wenqi Shao*, Kaipeng Zhang, Yi Bin, Yu Wang, Ping Luo</div>
+                    <div class="periodical">
+                        <em>ICLR 2025 Oral</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="#">Needle In A Multimodal Haystack</a></div>
+                    <div class="author">Weiyun Wang*, <strong>Shuibai Zhang*</strong>, Yiming Ren*, Yuchen Duan*, Tiantong Li*, et al., Wenhai Wang</div>
+                    <div class="periodical">
+                        <em>NIPS 2024 Poster</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="#">Supervised Knowledge Makes Large Language Models Better In-Context Learners</a></div>
+                    <div class="author">Linyi Yang*, <strong>Shuibai Zhang*</strong>, Zhuohao Yu*, et al., Xing Xie, Weizhu Chen, Yue Zhang</div>
+                    <div class="periodical">
+                        <em>ICLR 2024 Poster</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="#">GLUE-X: Evaluating Natural Language Understanding Models from an Out-of-distribution Generalization Perspective</a></div>
+                    <div class="author">Linyi Yang*, <strong>Shuibai Zhang*</strong>, et al., Jindong Wang, Xing Xie, Yue Zhang</div>
+                    <div class="periodical"><em>ACL 2023 Findings</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Work Experience</h2>
+            <div class="experience">
+                <div class="job">
+                    <div class="title">Research Assistant</div>
+                    <div class="location">Shanghai AI Laboratory, Shanghai</div>
+                    <div class="date">May 2024 - Aug 2024</div>
+                </div>
+                <div class="job">
+                    <div class="title">Research Assistant</div>
+                    <div class="location">WestlakeNLP Lab, Westlake University, Hangzhou</div>
+                    <div class="date">Jun 2023 - Apr 2024</div>
+                </div>
+            </div>
+
+            <h2>Teaching Experience</h2>
+            <div class="experience">
+                <div class="job">
+                    <div class="title">Teaching Assistant - COMP SCI 220 Data Science Programming I</div>
+                    <div class="location">University of Wisconsin-Madison</div>
+                    <div class="date">Jan 2025 - Present</div>
+                </div>
+                <div class="job">
+                    <div class="title">Teaching Assistant - COMP SCI 300 Programming II</div>
+                    <div class="location">University of Wisconsin-Madison</div>
+                    <div class="date">Sep 2024 - Dec 2024</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
