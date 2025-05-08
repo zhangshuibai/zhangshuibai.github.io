@@ -131,6 +131,32 @@
             font-size: 0.8rem; /* Smaller font size */
             color: #444;
         }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 20px;
+                gap: 30px;
+            }
+        
+            .sidebar, .main-content {
+                width: 100%;
+                text-align: center;
+            }
+        
+            .sidebar img {
+                width: 150px;
+                height: auto;
+            }
+        
+            .main-content h2, .sidebar h1 {
+                font-size: 1.1rem;
+            }
+        
+            .main-content p, .sidebar p {
+                font-size: 0.9rem;
+            }
+        }
+        
     </style>
 </head>
 <body>
