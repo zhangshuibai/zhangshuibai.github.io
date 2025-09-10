@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        .blog-button {
+            margin-top: 40px;   /* 控制和上方社交图标的间距，可以调大或调小 */
+            text-align: center; /* 按钮居中 */
+        }
+        
+        .blog-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            font-size: 0.95rem;
+            font-weight: 600;   /* 字体稍微加粗，更醒目 */
+            border-radius: 20px;   /* 圆角更大 */
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .blog-button a:hover {
+            background-color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* hover 时加点阴影，视觉反馈更好 */
+        }
+        
+        
         /* General styles */
         body {
             font-family: 'Merriweather', serif;
@@ -196,9 +220,11 @@
                 <a href="https://www.linkedin.com/in/shuibai-zhang-b3b853353/?trk=opento_sprofile_details" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://x.com/ShuibaiZ69721" title="Twitter (X)"><i class="fab fa-twitter"></i></a>
             </div>
+            <!-- Blog Button -->
+            <div class="blog-button">
+                <a href="/blog/" target="_blank">👉 Visit my Blog</a>
+    </div>
         </div>
-
-        <p><a href="/blog/">📖 Blog</a></p>
 
         <!-- Main Content -->
         <div class="main-content">
