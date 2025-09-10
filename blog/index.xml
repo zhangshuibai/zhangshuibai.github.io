@@ -6,14 +6,6 @@
     <description>Recent content on 我的博客</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 09 Sep 2025 23:40:51 -0500</lastBuildDate>
     <atom:link href="https://zhangshuibai.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hello World</title>
-      <link>https://zhangshuibai.github.io/blog/posts/hello-world/</link>
-      <pubDate>Tue, 09 Sep 2025 23:40:51 -0500</pubDate>
-      <guid>https://zhangshuibai.github.io/blog/posts/hello-world/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>
