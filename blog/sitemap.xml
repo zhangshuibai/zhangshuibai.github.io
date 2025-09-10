@@ -4,8 +4,16 @@
   <url>
     <loc>https://zhangshuibai.github.io/blog/categories/</loc>
   </url><url>
-    <loc>https://zhangshuibai.github.io/blog/tags/</loc>
+    <loc>https://zhangshuibai.github.io/blog/categories/general/</loc>
+  </url><url>
+    <loc>https://zhangshuibai.github.io/blog/posts/hello-world/</loc>
+  </url><url>
+    <loc>https://zhangshuibai.github.io/blog/posts/</loc>
   </url><url>
     <loc>https://zhangshuibai.github.io/blog/</loc>
+  </url><url>
+    <loc>https://zhangshuibai.github.io/blog/tags/</loc>
+  </url><url>
+    <loc>https://zhangshuibai.github.io/blog/tags/welcome/</loc>
   </url>
 </urlset>

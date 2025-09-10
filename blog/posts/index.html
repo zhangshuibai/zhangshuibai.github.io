@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.150.0"><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Shuibai’s Blog</title>
-
-<meta name="description" content="Thoughts on LLM post-training, diffusion LMs, and more.">
+<title>Posts | Shuibai’s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="Posts - Shuibai’s Blog">
 <meta name="author" content="Shuibai Zhang">
-<link rel="canonical" href="https://zhangshuibai.github.io/blog/">
+<link rel="canonical" href="https://zhangshuibai.github.io/blog/posts/">
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.2211ca3164be7830024f6aad2b3a2e520843a64f8f048445c3401c1249aa051d.css" integrity="sha256-IhHKMWS&#43;eDACT2qtKzouUghDpk&#43;PBIRFw0AcEkmqBR0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://zhangshuibai.github.io/blog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://zhangshuibai.github.io/blog/favicon-16x16.png">
@@ -19,9 +18,8 @@
 <link rel="mask-icon" href="https://zhangshuibai.github.io/blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://zhangshuibai.github.io/blog/index.xml">
-<link rel="alternate" type="application/json" href="https://zhangshuibai.github.io/blog/index.json">
-<link rel="alternate" hreflang="en" href="https://zhangshuibai.github.io/blog/">
+<link rel="alternate" type="application/rss+xml" href="https://zhangshuibai.github.io/blog/posts/index.xml">
+<link rel="alternate" hreflang="en" href="https://zhangshuibai.github.io/blog/posts/">
 <noscript>
     <style>
         #theme-toggle,
@@ -58,26 +56,28 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://zhangshuibai.github.io/blog/">
+</noscript><meta property="og:url" content="https://zhangshuibai.github.io/blog/posts/">
   <meta property="og:site_name" content="Shuibai’s Blog">
-  <meta property="og:title" content="Shuibai’s Blog">
+  <meta property="og:title" content="Posts">
   <meta property="og:description" content="Thoughts on LLM post-training, diffusion LMs, and more.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shuibai’s Blog">
+<meta name="twitter:title" content="Posts">
 <meta name="twitter:description" content="Thoughts on LLM post-training, diffusion LMs, and more.">
+
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Shuibai’s Blog",
-  "url": "https://zhangshuibai.github.io/blog/",
-  "description": "Thoughts on LLM post-training, diffusion LMs, and more.",
-  "logo": "https://zhangshuibai.github.io/blog/favicon.ico",
-  "sameAs": [
-      "https://github.com/zhangshuibai", "https://scholar.google.com/citations?user=jkXzD7YAAAAJ\u0026hl", "https://x.com/ShuibaiZ69721", "https://www.linkedin.com/in/shuibai-zhang-b3b853353/?trk=opento_sprofile_details"
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://zhangshuibai.github.io/blog/posts/"
+    }
   ]
 }
 </script>
@@ -136,65 +136,23 @@
             </li>
             <li>
                 <a href="https://zhangshuibai.github.io/blog/" title="Blog">
-                    <span class="active">Blog</span>
+                    <span>Blog</span>
                 </a>
             </li>
             <li>
                 <a href="https://zhangshuibai.github.io/blog/posts/" title="Papers">
-                    <span>Papers</span>
+                    <span class="active">Papers</span>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
 <main class="main"> 
-<article class="first-entry home-info">
-    <header class="entry-header">
-        <h1>Hi, I&rsquo;m Shuibai 👋</h1>
-    </header>
-    <div class="entry-content">
-        Researching post-training of LLMs and diffusion language models.
-    </div>
-    <footer class="entry-footer">
-        <div class="social-icons" >
-    <a href="https://github.com/zhangshuibai" target="_blank" rel="noopener noreferrer me"
-        title="Github">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-    </a>
-    <a href="https://scholar.google.com/citations?user=jkXzD7YAAAAJ&amp;hl" target="_blank" rel="noopener noreferrer me"
-        title="Googlescholar">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M5.242 13.769L0.5 9.5 12 1l11.5 9-5.242 3.769C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
-</svg>
-    </a>
-    <a href="https://x.com/ShuibaiZ69721" target="_blank" rel="noopener noreferrer me"
-        title="X">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-    <path
-        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
-    </path>
-</svg>
-    </a>
-    <a href="https://www.linkedin.com/in/shuibai-zhang-b3b853353/?trk=opento_sprofile_details" target="_blank" rel="noopener noreferrer me"
-        title="Linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-</svg>
-    </a>
-</div>
-
-    </footer>
-</article>
+<header class="page-header"><div class="breadcrumbs"><a href="https://zhangshuibai.github.io/blog/">Home</a></div>
+  <h1>
+    Posts
+  </h1>
+</header>
 
 <article class="post-entry"> 
   <header class="entry-header">
