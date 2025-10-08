@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Shuibai’s Blog</title>
-    <link>https://zhangshuibai.github.io/blog/posts/</link>
-    <description>Recent content in Posts on Shuibai’s Blog</description>
+    <title>Welcome on Shuibai’s Blog</title>
+    <link>https://zhangshuibai.github.io/blog/tags/welcome/</link>
+    <description>Recent content in Welcome on Shuibai’s Blog</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://zhangshuibai.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Inherent Limitations of DLLMs</title>
-      <link>https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-dllms/</link>
-      <pubDate>Tue, 07 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-dllms/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Wed, 10 Sep 2025 01:16:00 -0500</lastBuildDate>
+    <atom:link href="https://zhangshuibai.github.io/blog/tags/welcome/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World</title>
       <link>https://zhangshuibai.github.io/blog/posts/hello-world/</link>
