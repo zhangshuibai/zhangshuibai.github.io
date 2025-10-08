@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Shuibai’s Blog</title>
-    <link>https://zhangshuibai.github.io/blog/posts/</link>
-    <description>Recent content in Posts on Shuibai’s Blog</description>
+    <title>Diffusion on Shuibai’s Blog</title>
+    <link>https://zhangshuibai.github.io/blog/tags/diffusion/</link>
+    <description>Recent content in Diffusion on Shuibai’s Blog</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en</language>
     <lastBuildDate>Tue, 07 Oct 2025 00:00:00 -0500</lastBuildDate>
-    <atom:link href="https://zhangshuibai.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhangshuibai.github.io/blog/tags/diffusion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Inherent Limitations of Diffusion LLMs</title>
       <link>https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/</link>
@@ -17,21 +17,6 @@
 focusing on two core issues: lack of &lt;strong&gt;KV caching&lt;/strong&gt; and &lt;strong&gt;intractable sequence likelihood&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;👉 &lt;strong&gt;Read the full post on Notion:&lt;/strong&gt;&lt;br&gt;
 &lt;a href=&#34;https://www.notion.so/Inherent-Limitations-of-Diffusion-LLMs-That-Hinder-Scalability-Compared-to-Autoregressive-Models-285639c140e980c28935e4f0e0c0ebb7&#34;&gt;Inherent Limitations of Diffusion LLMs — Notion Page&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Hello World</title>
-      <link>https://zhangshuibai.github.io/blog/posts/hello-world/</link>
-      <pubDate>Wed, 10 Sep 2025 01:16:00 -0500</pubDate>
-      <guid>https://zhangshuibai.github.io/blog/posts/hello-world/</guid>
-      <description>&lt;h2 id=&#34;welcome-to-my-blog-&#34;&gt;Welcome to my Blog 👋&lt;/h2&gt;
-&lt;p&gt;This is the very first post on my site.&lt;br&gt;
-Here I will share thoughts on &lt;strong&gt;AI&lt;/strong&gt; and &lt;strong&gt;random thoughts about life&lt;/strong&gt;.&lt;br&gt;
-Stay tuned!&lt;/p&gt;
-&lt;hr&gt;
-&lt;section lang=&#34;zh-CN&#34;&gt;
-&lt;h2 id=&#34;欢迎来到我的博客-&#34;&gt;欢迎来到我的博客 👋&lt;/h2&gt;
-&lt;p&gt;这是本站的第一篇文章。 我将在这里分享关于 &lt;strong&gt;人工智能&lt;/strong&gt; 的一些研究体会，也会写一些 &lt;strong&gt;生活随想&lt;/strong&gt;。 敬请期待！&lt;/p&gt;
-&lt;/section&gt;</description>
     </item>
   </channel>
 </rss>

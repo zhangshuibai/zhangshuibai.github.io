@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.150.0"><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Shuibai’s Blog</title>
-
-<meta name="description" content="Thoughts on LLM post-training, diffusion LMs, and more.">
+<title>Inherent Limitations of Diffusion LLMs | Shuibai’s Blog</title>
+<meta name="keywords" content="DLLM, Diffusion, AI">
+<meta name="description" content="This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,
+focusing on two core issues: lack of KV caching and intractable sequence likelihood.
+👉 Read the full post on Notion:
+Inherent Limitations of Diffusion LLMs — Notion Page">
 <meta name="author" content="Shuibai Zhang">
-<link rel="canonical" href="https://zhangshuibai.github.io/blog/">
+<link rel="canonical" href="https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/">
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.2211ca3164be7830024f6aad2b3a2e520843a64f8f048445c3401c1249aa051d.css" integrity="sha256-IhHKMWS&#43;eDACT2qtKzouUghDpk&#43;PBIRFw0AcEkmqBR0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://zhangshuibai.github.io/blog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://zhangshuibai.github.io/blog/favicon-16x16.png">
@@ -19,9 +21,7 @@
 <link rel="mask-icon" href="https://zhangshuibai.github.io/blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://zhangshuibai.github.io/blog/index.xml">
-<link rel="alternate" type="application/json" href="https://zhangshuibai.github.io/blog/index.json">
-<link rel="alternate" hreflang="en" href="https://zhangshuibai.github.io/blog/">
+<link rel="alternate" hreflang="en" href="https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/">
 <noscript>
     <style>
         #theme-toggle,
@@ -58,32 +58,85 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://zhangshuibai.github.io/blog/">
+</noscript><meta property="og:url" content="https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/">
   <meta property="og:site_name" content="Shuibai’s Blog">
-  <meta property="og:title" content="Shuibai’s Blog">
-  <meta property="og:description" content="Thoughts on LLM post-training, diffusion LMs, and more.">
+  <meta property="og:title" content="Inherent Limitations of Diffusion LLMs">
+  <meta property="og:description" content="This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,
+focusing on two core issues: lack of KV caching and intractable sequence likelihood.
+👉 Read the full post on Notion:
+Inherent Limitations of Diffusion LLMs — Notion Page">
   <meta property="og:locale" content="en">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-07T00:00:00-05:00">
+    <meta property="article:modified_time" content="2025-10-07T00:00:00-05:00">
+    <meta property="article:tag" content="DLLM">
+    <meta property="article:tag" content="Diffusion">
+    <meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shuibai’s Blog">
-<meta name="twitter:description" content="Thoughts on LLM post-training, diffusion LMs, and more.">
+<meta name="twitter:title" content="Inherent Limitations of Diffusion LLMs">
+<meta name="twitter:description" content="This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,
+focusing on two core issues: lack of KV caching and intractable sequence likelihood.
+👉 Read the full post on Notion:
+Inherent Limitations of Diffusion LLMs — Notion Page">
+
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Shuibai’s Blog",
-  "url": "https://zhangshuibai.github.io/blog/",
-  "description": "Thoughts on LLM post-training, diffusion LMs, and more.",
-  "logo": "https://zhangshuibai.github.io/blog/favicon.ico",
-  "sameAs": [
-      "https://github.com/zhangshuibai", "https://scholar.google.com/citations?user=jkXzD7YAAAAJ\u0026hl", "https://x.com/ShuibaiZ69721", "https://www.linkedin.com/in/shuibai-zhang-b3b853353/?trk=opento_sprofile_details"
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://zhangshuibai.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Inherent Limitations of Diffusion LLMs",
+      "item": "https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/"
+    }
   ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Inherent Limitations of Diffusion LLMs",
+  "name": "Inherent Limitations of Diffusion LLMs",
+  "description": "This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,\nfocusing on two core issues: lack of KV caching and intractable sequence likelihood.\n👉 Read the full post on Notion:\nInherent Limitations of Diffusion LLMs — Notion Page\n",
+  "keywords": [
+    "DLLM", "Diffusion", "AI"
+  ],
+  "articleBody": "This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,\nfocusing on two core issues: lack of KV caching and intractable sequence likelihood.\n👉 Read the full post on Notion:\nInherent Limitations of Diffusion LLMs — Notion Page\n",
+  "wordCount" : "41",
+  "inLanguage": "en",
+  "datePublished": "2025-10-07T00:00:00-05:00",
+  "dateModified": "2025-10-07T00:00:00-05:00",
+  "author":{
+    "@type": "Person",
+    "name": "Shuibai Zhang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shuibai’s Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zhangshuibai.github.io/blog/favicon.ico"
+    }
+  }
 }
 </script>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -136,7 +189,7 @@
             </li>
             <li>
                 <a href="https://zhangshuibai.github.io/blog/" title="Blog">
-                    <span class="active">Blog</span>
+                    <span>Blog</span>
                 </a>
             </li>
             <li>
@@ -147,85 +200,41 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<article class="first-entry home-info">
-    <header class="entry-header">
-        <h1>Hi, I&rsquo;m Shuibai 👋</h1>
-    </header>
-    <div class="entry-content">
-        Researching post-training of LLMs and diffusion language models.
-    </div>
-    <footer class="entry-footer">
-        <div class="social-icons" >
-    <a href="https://github.com/zhangshuibai" target="_blank" rel="noopener noreferrer me"
-        title="Github">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-    </a>
-    <a href="https://scholar.google.com/citations?user=jkXzD7YAAAAJ&amp;hl" target="_blank" rel="noopener noreferrer me"
-        title="Googlescholar">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M5.242 13.769L0.5 9.5 12 1l11.5 9-5.242 3.769C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
-</svg>
-    </a>
-    <a href="https://x.com/ShuibaiZ69721" target="_blank" rel="noopener noreferrer me"
-        title="X">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-    <path
-        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
-    </path>
-</svg>
-    </a>
-    <a href="https://www.linkedin.com/in/shuibai-zhang-b3b853353/?trk=opento_sprofile_details" target="_blank" rel="noopener noreferrer me"
-        title="Linkedin">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-    <rect x="2" y="9" width="4" height="12"></rect>
-    <circle cx="4" cy="4" r="2"></circle>
-</svg>
-    </a>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://zhangshuibai.github.io/blog/">Home</a>&nbsp;»&nbsp;<a href="https://zhangshuibai.github.io/blog/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Inherent Limitations of Diffusion LLMs
+    </h1>
+    <div class="post-meta"><span title='2025-10-07 00:00:00 -0500 CDT'>Oct 7, 2025 · 12:00 AM</span>&nbsp;·&nbsp;Shuibai Zhang
+
 </div>
+  </header> 
+  <div class="post-content"><p>This article analyzes why <strong>Diffusion LLMs</strong> scale less efficiently than <strong>Autoregressive (AR) Models</strong>,<br>
+focusing on two core issues: lack of <strong>KV caching</strong> and <strong>intractable sequence likelihood</strong>.</p>
+<p>👉 <strong>Read the full post on Notion:</strong><br>
+<a href="https://www.notion.so/Inherent-Limitations-of-Diffusion-LLMs-That-Hinder-Scalability-Compared-to-Autoregressive-Models-285639c140e980c28935e4f0e0c0ebb7">Inherent Limitations of Diffusion LLMs — Notion Page</a></p>
 
-    </footer>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Inherent Limitations of Diffusion LLMs
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,
-focusing on two core issues: lack of KV caching and intractable sequence likelihood.
-👉 Read the full post on Notion:
-Inherent Limitations of Diffusion LLMs — Notion Page
-</p>
   </div>
-  <footer class="entry-footer"><span title='2025-10-07 00:00:00 -0500 CDT'>Oct 7, 2025 · 12:00 AM</span>&nbsp;·&nbsp;Shuibai Zhang</footer>
-  <a class="entry-link" aria-label="post link to Inherent Limitations of Diffusion LLMs" href="https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/"></a>
-</article>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Hello World
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Welcome to my Blog 👋 This is the very first post on my site.
-Here I will share thoughts on AI and random thoughts about life.
-Stay tuned!
-欢迎来到我的博客 👋 这是本站的第一篇文章。 我将在这里分享关于 人工智能 的一些研究体会，也会写一些 生活随想。 敬请期待！
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-09-10 01:16:00 -0500 CDT'>Sep 10, 2025 · 1:16 AM</span>&nbsp;·&nbsp;Shuibai Zhang</footer>
-  <a class="entry-link" aria-label="post link to Hello World" href="https://zhangshuibai.github.io/blog/posts/hello-world/"></a>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://zhangshuibai.github.io/blog/tags/dllm/">DLLM</a></li>
+      <li><a href="https://zhangshuibai.github.io/blog/tags/diffusion/">Diffusion</a></li>
+      <li><a href="https://zhangshuibai.github.io/blog/tags/ai/">AI</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://zhangshuibai.github.io/blog/posts/hello-world/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Hello World</span>
+  </a>
+</nav>
+
+  </footer>
 </article>
     </main>
     
@@ -297,6 +306,53 @@ Stay tuned!
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 
