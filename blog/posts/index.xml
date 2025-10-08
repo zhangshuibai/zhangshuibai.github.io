@@ -6,12 +6,12 @@
     <description>Recent content in Posts on Shuibai’s Blog</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Oct 2025 00:00:00 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 07 Oct 2025 23:59:00 -0500</lastBuildDate>
     <atom:link href="https://zhangshuibai.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Inherent Limitations of Diffusion LLMs</title>
       <link>https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/</link>
-      <pubDate>Tue, 07 Oct 2025 00:00:00 -0500</pubDate>
+      <pubDate>Tue, 07 Oct 2025 23:59:00 -0500</pubDate>
       <guid>https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/</guid>
       <description>&lt;p&gt;This article analyzes why &lt;strong&gt;Diffusion LLMs&lt;/strong&gt; scale less efficiently than &lt;strong&gt;Autoregressive (AR) Models&lt;/strong&gt;,&lt;br&gt;
 focusing on two core issues: lack of &lt;strong&gt;KV caching&lt;/strong&gt; and &lt;strong&gt;intractable sequence likelihood&lt;/strong&gt;.&lt;/p&gt;
