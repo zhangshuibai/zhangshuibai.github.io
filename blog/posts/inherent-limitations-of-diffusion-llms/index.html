@@ -5,11 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Categories | Shuibai’s Blog</title>
-<meta name="keywords" content="">
-<meta name="description" content="Thoughts on LLM post-training, diffusion LMs, and more.">
+<title>Inherent Limitations of Diffusion LLMs | Shuibai’s Blog</title>
+<meta name="keywords" content="DLLM, Diffusion, AI">
+<meta name="description" content="This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,
+focusing on two core issues: lack of KV caching and intractable sequence likelihood.
+👉 Read the full post on Notion:
+Inherent Limitations of Diffusion LLMs — Notion Page">
 <meta name="author" content="Shuibai Zhang">
-<link rel="canonical" href="https://zhangshuibai.github.io/blog/categories/">
+<link rel="canonical" href="https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/">
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.2211ca3164be7830024f6aad2b3a2e520843a64f8f048445c3401c1249aa051d.css" integrity="sha256-IhHKMWS&#43;eDACT2qtKzouUghDpk&#43;PBIRFw0AcEkmqBR0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://zhangshuibai.github.io/blog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://zhangshuibai.github.io/blog/favicon-16x16.png">
@@ -18,8 +21,7 @@
 <link rel="mask-icon" href="https://zhangshuibai.github.io/blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://zhangshuibai.github.io/blog/categories/index.xml">
-<link rel="alternate" hreflang="en" href="https://zhangshuibai.github.io/blog/categories/">
+<link rel="alternate" hreflang="en" href="https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,19 +58,85 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://zhangshuibai.github.io/blog/categories/">
+</noscript><meta property="og:url" content="https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/">
   <meta property="og:site_name" content="Shuibai’s Blog">
-  <meta property="og:title" content="Categories">
-  <meta property="og:description" content="Thoughts on LLM post-training, diffusion LMs, and more.">
+  <meta property="og:title" content="Inherent Limitations of Diffusion LLMs">
+  <meta property="og:description" content="This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,
+focusing on two core issues: lack of KV caching and intractable sequence likelihood.
+👉 Read the full post on Notion:
+Inherent Limitations of Diffusion LLMs — Notion Page">
   <meta property="og:locale" content="en">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-07T00:00:00-05:00">
+    <meta property="article:modified_time" content="2025-10-07T00:00:00-05:00">
+    <meta property="article:tag" content="DLLM">
+    <meta property="article:tag" content="Diffusion">
+    <meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Categories">
-<meta name="twitter:description" content="Thoughts on LLM post-training, diffusion LMs, and more.">
+<meta name="twitter:title" content="Inherent Limitations of Diffusion LLMs">
+<meta name="twitter:description" content="This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,
+focusing on two core issues: lack of KV caching and intractable sequence likelihood.
+👉 Read the full post on Notion:
+Inherent Limitations of Diffusion LLMs — Notion Page">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://zhangshuibai.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Inherent Limitations of Diffusion LLMs",
+      "item": "https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Inherent Limitations of Diffusion LLMs",
+  "name": "Inherent Limitations of Diffusion LLMs",
+  "description": "This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,\nfocusing on two core issues: lack of KV caching and intractable sequence likelihood.\n👉 Read the full post on Notion:\nInherent Limitations of Diffusion LLMs — Notion Page\n",
+  "keywords": [
+    "DLLM", "Diffusion", "AI"
+  ],
+  "articleBody": "This article analyzes why Diffusion LLMs scale less efficiently than Autoregressive (AR) Models,\nfocusing on two core issues: lack of KV caching and intractable sequence likelihood.\n👉 Read the full post on Notion:\nInherent Limitations of Diffusion LLMs — Notion Page\n",
+  "wordCount" : "41",
+  "inLanguage": "en",
+  "datePublished": "2025-10-07T00:00:00-05:00",
+  "dateModified": "2025-10-07T00:00:00-05:00",
+  "author":{
+    "@type": "Person",
+    "name": "Shuibai Zhang"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-diffusion-llms/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Shuibai’s Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zhangshuibai.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -133,15 +201,41 @@
     </nav>
 </header>
 <main class="main">
-<header class="page-header">
-    <h1>Categories</h1>
-</header>
 
-<ul class="terms-tags">
-    <li>
-        <a href="https://zhangshuibai.github.io/blog/categories/research/">Research <sup><strong><sup>1</sup></strong></sup> </a>
-    </li>
-</ul>
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://zhangshuibai.github.io/blog/">Home</a>&nbsp;»&nbsp;<a href="https://zhangshuibai.github.io/blog/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Inherent Limitations of Diffusion LLMs
+    </h1>
+    <div class="post-meta"><span title='2025-10-07 00:00:00 -0500 CDT'>Oct 7, 2025 · 12:00 AM</span>&nbsp;·&nbsp;Shuibai Zhang
+
+</div>
+  </header> 
+  <div class="post-content"><p>This article analyzes why <strong>Diffusion LLMs</strong> scale less efficiently than <strong>Autoregressive (AR) Models</strong>,<br>
+focusing on two core issues: lack of <strong>KV caching</strong> and <strong>intractable sequence likelihood</strong>.</p>
+<p>👉 <strong>Read the full post on Notion:</strong><br>
+<a href="https://www.notion.so/Inherent-Limitations-of-Diffusion-LLMs-That-Hinder-Scalability-Compared-to-Autoregressive-Models-285639c140e980c28935e4f0e0c0ebb7">Inherent Limitations of Diffusion LLMs — Notion Page</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://zhangshuibai.github.io/blog/tags/dllm/">DLLM</a></li>
+      <li><a href="https://zhangshuibai.github.io/blog/tags/diffusion/">Diffusion</a></li>
+      <li><a href="https://zhangshuibai.github.io/blog/tags/ai/">AI</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://zhangshuibai.github.io/blog/posts/inherent-limitations-of-dllms/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Inherent Limitations of DLLMs</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
     </main>
     
 <footer class="footer">
@@ -212,6 +306,53 @@
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 
