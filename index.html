@@ -81,9 +81,48 @@
             margin: 0 8px;
             color: #333;
             font-size: 0.9rem; /* Smaller icon size */
+            position: relative;
+            display: inline-block;
         }
         .sidebar .social-icons a:hover {
             color: #0056b3;
+        }
+        /* Custom tooltip */
+        .sidebar .social-icons a::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            border-radius: 4px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            margin-bottom: 5px;
+            z-index: 1000;
+        }
+        .sidebar .social-icons a::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #333;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            margin-bottom: -5px;
+            z-index: 1000;
+        }
+        .sidebar .social-icons a:hover::after,
+        .sidebar .social-icons a:hover::before {
+            opacity: 1;
         }
 
         /* Main content styles */
@@ -218,8 +257,8 @@
                 </a>
                 <a href="https://github.com/zhangshuibai" title="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/shuibai-zhang-b3b853353/?trk=opento_sprofile_details" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/ShuibaiZ69721" title="Twitter (X)"><i class="fab fa-twitter"></i></a>
-                <a href="https://drive.google.com/file/d/1xnpQMYjnyl9XtMlaVH_Svp9e2panbGKh/view?usp=sharing" title="Resume"><i class="fas fa-id-card"></i></a>
+                <a href="https://x.com/ShuibaiZ69721" title="Twitter / X"><i class="fab fa-twitter"></i></a>
+                <a href="https://drive.google.com/file/d/1xnpQMYjnyl9XtMlaVH_Svp9e2panbGKh/view?usp=sharing" title="Resume / CV"><i class="fas fa-id-card"></i></a>
             </div>
             <!-- Blog Button -->
             <div class="blog-button">
