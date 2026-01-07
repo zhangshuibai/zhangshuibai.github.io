@@ -25,7 +25,7 @@
         }
         
         .blog-button a:hover {
-            background: #004494;
+            background: #0066cc;
         }
         
         
@@ -169,6 +169,16 @@
             font-weight: 700;
             padding-bottom: 6px;
             border-bottom: 2px solid #e9ecef;
+            position: relative;
+        }
+        .main-content h2::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #0056b3;
         }
         .main-content h2:first-child {
             margin-top: 0;
@@ -187,10 +197,12 @@
             background: #f8f9fa;
             border-radius: 6px;
             border-left: 3px solid #6c757d;
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
         }
         .publications .publication:hover {
             background: #e9ecef;
+            border-left-color: #0056b3;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
         }
         .publications .publication .title {
             font-weight: 700;
@@ -221,6 +233,20 @@
             color: #888;
             font-style: italic;
         }
+        .publications .publication .periodical em {
+            color: #212529;
+            font-weight: 600;
+            font-style: normal;
+        }
+        .publications .publication .periodical strong {
+            color: #d97706;
+            font-weight: 600;
+            font-style: normal;
+            background: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 4px;
+        }
         .publications .publication .equal-contribution {
             color: #d32f2f;
             font-size: 0.75rem;
@@ -233,10 +259,12 @@
             background: #f8f9fa;
             border-radius: 6px;
             border-left: 3px solid #6c757d;
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
         }
         .projects .project:hover {
             background: #e9ecef;
+            border-left-color: #0056b3;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
         }
         .projects .title {
             font-weight: 700;
@@ -275,10 +303,12 @@
             background: #f8f9fa;
             border-radius: 6px;
             border-left: 3px solid #6c757d;
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
         }
         .experience .job:hover {
             background: #e9ecef;
+            border-left-color: #0056b3;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
         }
         .experience .job .title {
             font-weight: 700;
@@ -432,10 +462,15 @@
             }
             
             /* 确保邮箱链接在移动端正确显示 */
-            .sidebar p a {
-                display: inline-block;
-                margin-top: 4px;
-            }
+        .sidebar p a {
+            display: inline-block;
+            margin-top: 4px;
+            color: #0056b3;
+            font-weight: 500;
+        }
+        .sidebar p a:hover {
+            text-decoration: underline;
+        }
         }
         
         /* 针对更小的手机屏幕进一步优化 */
