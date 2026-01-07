@@ -214,10 +214,15 @@
             color: #444;
         }
         @media (max-width: 768px) {
+            body {
+                font-size: 15px; /* 稍微增大基础字体，提高可读性 */
+            }
+            
             .container {
                 flex-direction: column;
-                padding: 20px;
-                gap: 30px;
+                padding: 15px 20px; /* 减少上下内边距，增加左右内边距 */
+                gap: 25px;
+                margin: 20px auto; /* 减少顶部边距 */
             }
         
             .sidebar, .main-content {
@@ -226,16 +231,139 @@
             }
         
             .sidebar img {
-                width: 150px;
+                width: 180px; /* 稍微增大图片，但保持合理 */
                 height: auto;
+                margin-bottom: 20px;
             }
         
-            .main-content h2, .sidebar h1 {
+            .sidebar h1 {
+                font-size: 1.3rem; /* 保持标题清晰 */
+                margin-bottom: 12px;
+            }
+            
+            .sidebar p {
+                font-size: 0.9rem;
+                margin: 8px 0;
+                line-height: 1.6; /* 增加行高，提高可读性 */
+            }
+            
+            .sidebar .social-icons {
+                margin: 15px 0;
+            }
+            
+            .sidebar .social-icons a {
+                margin: 0 12px; /* 增加图标间距，便于点击 */
+                font-size: 1.2rem; /* 增大图标，提高触摸友好性 */
+                padding: 8px; /* 增加点击区域 */
+            }
+            
+            .blog-button {
+                margin-top: 25px;
+            }
+            
+            .blog-button a {
+                padding: 12px 24px; /* 增大按钮，便于点击 */
+                font-size: 1rem;
+                display: block;
+                margin: 0 auto;
+                max-width: 280px; /* 限制最大宽度 */
+            }
+        
+            .main-content h2 {
+                font-size: 1.25rem;
+                margin-bottom: 12px;
+                margin-top: 25px; /* 增加章节间距 */
+            }
+            
+            .main-content h2:first-child {
+                margin-top: 0;
+            }
+        
+            .main-content p {
+                font-size: 0.95rem;
+                line-height: 1.7; /* 增加行高 */
+                margin-bottom: 18px;
+            }
+            
+            /* 优化出版物和项目样式 */
+            .publications .publication,
+            .projects .project,
+            .experience .job {
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #f0f0f0; /* 添加分隔线 */
+            }
+            
+            .publications .publication:last-child,
+            .projects .project:last-child,
+            .experience .job:last-child {
+                border-bottom: none;
+            }
+            
+            .publications .publication .title,
+            .projects .title,
+            .experience .job .title {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 8px;
+                word-wrap: break-word; /* 确保长标题换行 */
+            }
+            
+            .publications .publication .author,
+            .projects .description,
+            .experience .job .location,
+            .experience .job .mentor {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 6px;
+            }
+            
+            .publications .publication .periodical,
+            .projects .periodical,
+            .experience .job .date {
+                font-size: 0.85rem;
+            }
+            
+            /* 优化链接样式 */
+            a {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            /* 确保邮箱链接在移动端正确显示 */
+            .sidebar p a {
+                display: inline-block;
+                margin-top: 4px;
+            }
+        }
+        
+        /* 针对更小的手机屏幕进一步优化 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 15px;
+                gap: 20px;
+            }
+            
+            .sidebar img {
+                width: 160px;
+            }
+            
+            .sidebar h1 {
+                font-size: 1.2rem;
+            }
+            
+            .main-content h2 {
+                font-size: 1.15rem;
+            }
+            
+            .sidebar .social-icons a {
+                margin: 0 10px;
                 font-size: 1.1rem;
             }
-        
-            .main-content p, .sidebar p {
-                font-size: 0.9rem;
+            
+            .blog-button a {
+                padding: 10px 20px;
+                font-size: 0.95rem;
             }
         }
         
