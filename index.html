@@ -283,8 +283,28 @@
         .projects .description {
             font-size: 0.8rem;
             color: #444;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             line-height: 1.5;
+        }
+        .projects .project-links {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .projects .project-links a {
+            color: #0056b3;
+        }
+        .projects .project-links a:hover {
+            color: #003d82;
+            text-decoration: underline;
+        }
+        .projects .project-links img {
+            vertical-align: middle;
+            height: 18px;
         }
         .projects .periodical {
             font-size: 0.75rem;
@@ -549,12 +569,16 @@
             <div class="projects">
                 <div class="project">
                     <div class="title">
-                        <a href="https://oval-shell-31c.notion.site/Open-Diffusion-Large-Language-Model-25e03bf6136480b7a4ebe3d53be9f68a?pvs=74" target="_blank">
-                            🔥 Open-dCoder: The First Fully Open Diffusion LLM for Code
-                        </a>
+                        🔥 Open-dCoder: The First Fully Open Diffusion LLM for Code
                     </div>
                     <div class="description">
                         A 0.5B diffusion coding model with pretraining pipeline, inference code, checkpoints, and evaluation suite.
+                    </div>
+                    <div class="project-links">
+                        <a href="https://oval-shell-31c.notion.site/Open-Diffusion-Large-Language-Model-25e03bf6136480b7a4ebe3d53be9f68a?pvs=74" target="_blank">📝 Notion Blog</a>
+                        <span>|</span>
+                        <a href="https://github.com/pengzhangzhi/Open-dLLM/tree/main" target="_blank">💻 GitHub</a>
+                        <img src="https://img.shields.io/github/stars/pengzhangzhi/Open-dLLM?style=flat&logo=github" alt="GitHub stars">
                     </div>
                     <div class="periodical">
                         <em>Open Source Project</em>
