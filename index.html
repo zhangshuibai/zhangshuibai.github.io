@@ -14,20 +14,21 @@
         
         .blog-button a {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #f5f5f5;
-            color: #333;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+            color: #ffffff;
             font-size: 0.95rem;
-            font-weight: 600;   /* 字体稍微加粗，更醒目 */
-            border-radius: 20px;   /* 圆角更大 */
+            font-weight: 600;
+            border-radius: 25px;
             text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+            transition: all 0.3s ease;
         }
         
         .blog-button a:hover {
-            background-color: #e0e0e0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* hover 时加点阴影，视觉反馈更好 */
+            background: linear-gradient(135deg, #003d82 0%, #002855 100%);
+            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
+            transform: translateY(-2px);
         }
         
         
@@ -36,56 +37,101 @@
             font-family: 'Merriweather', serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            background-attachment: fixed;
             color: #333;
-            line-height: 1.5;
-            font-size: 14px; /* Slightly smaller font size */
+            line-height: 1.6;
+            font-size: 14px;
+            min-height: 100vh;
         }
         a {
             color: #0056b3;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         a:hover {
+            color: #003d82;
             text-decoration: underline;
         }
         .container {
             display: flex;
-            max-width: 1100px;
-            margin: 40px auto;
+            max-width: 1200px;
+            margin: 50px auto;
             padding: 0 40px;
-            gap: 60px;
+            gap: 50px;
+            align-items: flex-start;
         }
 
         /* Sidebar styles */
         .sidebar {
             width: 30%;
             text-align: center;
+            position: sticky;
+            top: 50px;
+            align-self: flex-start;
+            background: #ffffff;
+            padding: 30px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .sidebar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
         }
         .sidebar img {
-            width: 239px; /* Slightly smaller image */
-            height: auto;
-            margin-bottom: 15px;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 4px solid #e8ecf1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .sidebar img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            border-color: #0056b3;
         }
         .sidebar h1 {
-            font-size: 1.4rem; /* Slightly smaller font size */
+            font-size: 1.5rem;
             color: #003366;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: 700;
+            line-height: 1.3;
         }
         .sidebar p {
-            margin: 5px 0;
-            font-size: 0.85rem; /* Smaller font size */
+            margin: 8px 0;
+            font-size: 0.9rem;
             color: #555;
+            line-height: 1.6;
+        }
+        .sidebar .social-icons {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
         .sidebar .social-icons a {
-            margin: 0 8px;
-            color: #333;
-            font-size: 0.9rem; /* Smaller icon size */
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 1.1rem;
             position: relative;
-            display: inline-block;
+            background: #f8f9fa;
+            border-radius: 50%;
+            transition: all 0.3s ease;
         }
         .sidebar .social-icons a:hover {
-            color: #0056b3;
+            color: #ffffff;
+            background: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.3);
         }
         /* Custom tooltip */
         .sidebar .social-icons a::after {
@@ -128,63 +174,126 @@
         /* Main content styles */
         .main-content {
             width: 70%;
+            background: #ffffff;
+            padding: 40px 45px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
         .main-content h2 {
-            font-size: 1.3rem; /* Slightly smaller font size */
+            font-size: 1.4rem;
             color: #003366;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            margin-top: 35px;
             font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e8ecf1;
+            position: relative;
+        }
+        .main-content h2:first-child {
+            margin-top: 0;
+        }
+        .main-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #0056b3;
         }
         .main-content p {
-            font-size: 0.85rem; /* Smaller font size */
+            font-size: 0.9rem;
             color: #444;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            line-height: 1.8;
         }
 
         /* Publications styles */
         .publications .publication {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            padding: 18px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #0056b3;
+            transition: all 0.3s ease;
+        }
+        .publications .publication:hover {
+            background: #f0f4f8;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
         .publications .publication .title {
             font-weight: 700;
-            font-size: 0.95rem; /* Smaller font size */
-            margin-bottom: 5px;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #0056b3;
+            line-height: 1.4;
+        }
+        .publications .publication .title a {
             color: #0056b3;
         }
+        .publications .publication .title a:hover {
+            color: #003d82;
+            text-decoration: underline;
+        }
         .publications .publication .author {
-            font-size: 0.8rem; /* Smaller font size */
+            font-size: 0.85rem;
             color: #666;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            line-height: 1.5;
         }
         .publications .publication .author strong {
-            color: #333;
+            color: #003366;
+            font-weight: 600;
         }
         .publications .publication .periodical {
-            font-size: 0.75rem; /* Smaller font size */
+            font-size: 0.8rem;
             color: #888;
+            font-style: italic;
         }
         .publications .publication .equal-contribution {
-            color: red;
-            font-size: 0.75rem; /* Smaller font size */
+            color: #d32f2f;
+            font-size: 0.75rem;
             margin-left: 5px;
+            font-weight: 500;
         }
         .projects .project {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            padding: 18px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            transition: all 0.3s ease;
+        }
+        .projects .project:hover {
+            background: #f0f4f8;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
         .projects .title {
             font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 5px;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #0056b3;
+            line-height: 1.4;
+        }
+        .projects .title a {
             color: #0056b3;
         }
+        .projects .title a:hover {
+            color: #003d82;
+            text-decoration: underline;
+        }
         .projects .description {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #444;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            line-height: 1.6;
         }
         .projects .periodical {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: #888;
+            font-style: italic;
         }
 
 
@@ -193,46 +302,71 @@
             margin-top: 15px;
         }
         .experience .job {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            padding: 18px 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #6c757d;
+            transition: all 0.3s ease;
+        }
+        .experience .job:hover {
+            background: #f0f4f8;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
         .experience .job .title {
             font-weight: 700;
-            font-size: 0.95rem; /* Smaller font size */
-            margin-bottom: 5px;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #003366;
+            line-height: 1.4;
         }
         .experience .job .location {
-            font-size: 0.8rem; /* Smaller font size */
+            font-size: 0.85rem;
             color: #666;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            line-height: 1.5;
         }
         .experience .job .date {
-            font-size: 0.75rem; /* Smaller font size */
+            font-size: 0.8rem;
             color: #888;
+            font-style: italic;
+            margin-bottom: 6px;
         }
         .experience .job .mentor {
-            font-size: 0.8rem; /* Smaller font size */
+            font-size: 0.85rem;
             color: #444;
+            line-height: 1.5;
         }
         @media (max-width: 768px) {
             body {
-                font-size: 15px; /* 稍微增大基础字体，提高可读性 */
+                font-size: 15px;
+                background: #f5f7fa;
             }
             
             .container {
                 flex-direction: column;
-                padding: 15px 20px; /* 减少上下内边距，增加左右内边距 */
+                padding: 15px 20px;
                 gap: 25px;
-                margin: 20px auto; /* 减少顶部边距 */
+                margin: 20px auto;
             }
         
-            .sidebar, .main-content {
+            .sidebar {
                 width: 100%;
                 text-align: center;
+                position: static;
+                padding: 25px 20px;
+            }
+            
+            .main-content {
+                width: 100%;
+                padding: 30px 25px;
             }
         
             .sidebar img {
-                width: 180px; /* 稍微增大图片，但保持合理 */
-                height: auto;
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
                 margin-bottom: 20px;
             }
         
@@ -248,13 +382,14 @@
             }
             
             .sidebar .social-icons {
-                margin: 15px 0;
+                margin: 20px 0;
+                gap: 10px;
             }
             
             .sidebar .social-icons a {
-                margin: 0 12px; /* 增加图标间距，便于点击 */
-                font-size: 1.2rem; /* 增大图标，提高触摸友好性 */
-                padding: 8px; /* 增加点击区域 */
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
             }
             
             .blog-button {
@@ -289,15 +424,15 @@
             .publications .publication,
             .projects .project,
             .experience .job {
-                margin-bottom: 20px;
-                padding-bottom: 15px;
-                border-bottom: 1px solid #f0f0f0; /* 添加分隔线 */
+                margin-bottom: 18px;
+                padding: 15px 18px;
+                border-left-width: 3px;
             }
             
-            .publications .publication:last-child,
-            .projects .project:last-child,
-            .experience .job:last-child {
-                border-bottom: none;
+            .publications .publication:hover,
+            .projects .project:hover,
+            .experience .job:hover {
+                transform: translateX(3px);
             }
             
             .publications .publication .title,
@@ -346,6 +481,8 @@
             
             .sidebar img {
                 width: 160px;
+                height: 160px;
+                object-fit: cover;
             }
             
             .sidebar h1 {
@@ -357,7 +494,8 @@
             }
             
             .sidebar .social-icons a {
-                margin: 0 10px;
+                width: 40px;
+                height: 40px;
                 font-size: 1.1rem;
             }
             
