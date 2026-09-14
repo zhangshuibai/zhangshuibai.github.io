@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuibai Zhang (张水柏) | University of Wisconsin-Madison</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-button {
+            margin-top: 25px;
+            text-align: center;
+        }
+        
+        .blog-button a {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #0056b3;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        
+        .blog-button a:hover {
+            background: #0066cc;
+        }
+        
+        
+        /* General styles */
+        body {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            font-size: 14px;
+            min-height: 100vh;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #003d82;
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 35px auto;
+            padding: 0 30px;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 28%;
+            text-align: center;
+            position: sticky;
+            top: 35px;
+            align-self: flex-start;
+            background: #ffffff;
+            padding: 25px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .sidebar img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            border: 3px solid #e9ecef;
+        }
+        .sidebar h1 {
+            font-size: 1.35rem;
+            color: #212529;
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        .sidebar p {
+            margin: 6px 0;
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        .sidebar .social-icons {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .sidebar .social-icons a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.1rem;
+            position: relative;
+            background: #f8f9fa;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        .sidebar .social-icons a:hover {
+            color: #0056b3;
+            background: #e9ecef;
+        }
+        /* Custom tooltip */
+        .sidebar .social-icons a::after {
+            content: attr(title);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            border-radius: 4px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            margin-bottom: 5px;
+            z-index: 1000;
+        }
+        .sidebar .social-icons a::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #333;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            margin-bottom: -5px;
+            z-index: 1000;
+        }
+        .sidebar .social-icons a:hover::after,
+        .sidebar .social-icons a:hover::before {
+            opacity: 1;
+        }
+
+        /* Main content styles */
+        .main-content {
+            width: 72%;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .main-content h2 {
+            font-size: 1.3rem;
+            color: #212529;
+            margin-bottom: 15px;
+            margin-top: 28px;
+            font-weight: 700;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e9ecef;
+            position: relative;
+        }
+        .main-content h2::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #0056b3;
+        }
+        .main-content h2:first-child {
+            margin-top: 0;
+        }
+        .main-content p {
+            font-size: 0.85rem;
+            color: #444;
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+
+        /* Publications styles */
+        .publications .publication {
+            margin-bottom: 14px;
+            padding: 12px 18px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #6c757d;
+            transition: all 0.2s ease;
+        }
+        .publications .publication:hover {
+            background: #e9ecef;
+            border-left-color: #0056b3;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+        .publications .publication .title {
+            font-weight: 700;
+            font-size: 0.92rem;
+            margin-bottom: 6px;
+            color: #0056b3;
+            line-height: 1.35;
+        }
+        .publications .publication .title a {
+            color: #0056b3;
+        }
+        .publications .publication .title a:hover {
+            color: #003d82;
+            text-decoration: underline;
+        }
+        .publications .publication .author {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        .publications .publication .author strong {
+            color: #212529;
+            font-weight: 600;
+        }
+        .publications .publication .periodical {
+            font-size: 0.75rem;
+            color: #888;
+            font-style: italic;
+        }
+        .publications .publication .periodical em {
+            color: #212529;
+            font-weight: 600;
+            font-style: normal;
+        }
+        .publications .publication .periodical strong {
+            color: #d97706;
+            font-weight: 600;
+            font-style: normal;
+            background: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 4px;
+        }
+        .publications .publication .equal-contribution {
+            color: #d32f2f;
+            font-size: 0.75rem;
+            margin-left: 5px;
+            font-weight: 500;
+        }
+        .projects .project {
+            margin-bottom: 14px;
+            padding: 12px 18px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #6c757d;
+            transition: all 0.2s ease;
+        }
+        .projects .project:hover {
+            background: #e9ecef;
+            border-left-color: #0056b3;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+        .projects .title {
+            font-weight: 700;
+            font-size: 0.92rem;
+            margin-bottom: 6px;
+            color: #0056b3;
+            line-height: 1.35;
+        }
+        .projects .title a {
+            color: #0056b3;
+        }
+        .projects .title a:hover {
+            color: #003d82;
+            text-decoration: underline;
+        }
+        .projects .description {
+            font-size: 0.8rem;
+            color: #444;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .projects .project-links {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .projects .project-links a {
+            color: #0056b3;
+        }
+        .projects .project-links a:hover {
+            color: #003d82;
+            text-decoration: underline;
+        }
+        .projects .project-links img {
+            vertical-align: middle;
+            height: 18px;
+        }
+        .projects .periodical {
+            font-size: 0.75rem;
+            color: #888;
+            font-style: italic;
+        }
+
+
+        /* Experience styles */
+        .experience {
+            margin-top: 10px;
+        }
+        .experience .job {
+            margin-bottom: 14px;
+            padding: 12px 18px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #6c757d;
+            transition: all 0.2s ease;
+        }
+        .experience .job:hover {
+            background: #e9ecef;
+            border-left-color: #0056b3;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+        .experience .job .title {
+            font-weight: 700;
+            font-size: 0.92rem;
+            margin-bottom: 6px;
+            color: #212529;
+            line-height: 1.35;
+        }
+        .experience .job .location {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        .experience .job .date {
+            font-size: 0.75rem;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+                background: #f8f9fa;
+            }
+            
+            .container {
+                flex-direction: column;
+                padding: 15px 20px;
+                gap: 25px;
+                margin: 20px auto;
+            }
+        
+            .sidebar {
+                width: 100%;
+                text-align: center;
+                position: static;
+                padding: 25px 20px;
+            }
+            
+            .main-content {
+                width: 100%;
+                padding: 30px 25px;
+            }
+        
+            .sidebar img {
+                width: 180px;
+                height: 180px;
+                object-fit: cover;
+                margin-bottom: 20px;
+            }
+        
+            .sidebar h1 {
+                font-size: 1.3rem; /* 保持标题清晰 */
+                margin-bottom: 12px;
+            }
+            
+            .sidebar p {
+                font-size: 0.9rem;
+                margin: 8px 0;
+                line-height: 1.6; /* 增加行高，提高可读性 */
+            }
+            
+            .sidebar .social-icons {
+                margin: 20px 0;
+                gap: 10px;
+            }
+            
+            .sidebar .social-icons a {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+            
+            .blog-button {
+                margin-top: 25px;
+            }
+            
+            .blog-button a {
+                padding: 12px 24px; /* 增大按钮，便于点击 */
+                font-size: 1rem;
+                display: block;
+                margin: 0 auto;
+                max-width: 280px; /* 限制最大宽度 */
+            }
+        
+            .main-content h2 {
+                font-size: 1.25rem;
+                margin-bottom: 12px;
+                margin-top: 25px; /* 增加章节间距 */
+            }
+            
+            .main-content h2:first-child {
+                margin-top: 0;
+            }
+        
+            .main-content p {
+                font-size: 0.9rem;
+                line-height: 1.7;
+                margin-bottom: 18px;
+            }
+            
+            /* 优化出版物和项目样式 */
+            .publications .publication,
+            .projects .project,
+            .experience .job {
+                margin-bottom: 18px;
+                padding: 15px 18px;
+                border-left-width: 3px;
+            }
+            
+            .publications .publication:hover,
+            .projects .project:hover,
+            .experience .job:hover {
+                transform: translateX(3px);
+            }
+            
+            .publications .publication .title,
+            .projects .title,
+            .experience .job .title {
+                font-size: 1rem;
+                line-height: 1.5;
+                margin-bottom: 8px;
+                word-wrap: break-word; /* 确保长标题换行 */
+            }
+            
+            .publications .publication .author,
+            .projects .description,
+            .experience .job .location {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 6px;
+            }
+            
+            .publications .publication .periodical,
+            .projects .periodical,
+            .experience .job .date {
+                font-size: 0.85rem;
+            }
+            
+            /* 优化链接样式 */
+            a {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            /* 确保邮箱链接在移动端正确显示 */
+        .sidebar p a {
+            display: inline-block;
+            margin-top: 4px;
+            color: #0056b3;
+            font-weight: 500;
+        }
+        .sidebar p a:hover {
+            text-decoration: underline;
+        }
+        }
+        
+        /* 针对更小的手机屏幕进一步优化 */
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px 15px;
+                gap: 20px;
+            }
+            
+            .sidebar img {
+                width: 160px;
+                height: 160px;
+                object-fit: cover;
+            }
+            
+            .sidebar h1 {
+                font-size: 1.2rem;
+            }
+            
+            .main-content h2 {
+                font-size: 1.15rem;
+            }
+            
+            .sidebar .social-icons a {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            .blog-button a {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="assets/img/shuibai_profile.JPG" alt="Shuibai Zhang">
+            <h1>Shuibai Zhang (张水柏)</h1>
+            <p>Also known as Shuibo Zhang</p>
+            <p>Ph.D. Student, Computer Science (on leave)</p>
+            <p>University of Wisconsin-Madison</p>
+            <p>Email: <a href="mailto:shuibai@cs.wisc.edu">shuibai@cs.wisc.edu</a></p>
+            <div class="social-icons">
+                <a href="https://scholar.google.com/citations?user=jkXzD7YAAAAJ&hl" title="Google Scholar">
+                    <i class="fas fa-graduation-cap"></i> <!-- Google Scholar Icon -->
+                </a>
+                <a href="https://github.com/zhangshuibai" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shuibai-zhang-b3b853353/?trk=opento_sprofile_details" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/ShuibaiZ69721" title="Twitter / X"><i class="fab fa-twitter"></i></a>
+            </div>
+            <!-- Blog Button -->
+            <div class="blog-button">
+                <a href="/blog/" target="_blank">👉 Visit my Blog</a>
+    </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>About Me</h2>
+            <p>I am a third-year Computer Science Ph.D. student at the University of Wisconsin-Madison, currently on leave.</p>
+
+            <p>My current main interest is <strong>AI for scientific discovery</strong> [<a href="https://zhangshuibai.github.io/blog/posts/scientific-discovery-is-the-next-bottleneck-for-intelligence/" target="_blank">my research vision</a>]. I believe that once AI can run research end to end on its own, technological progress goes exponential.</p>
+
+            <p>As an impact-driven researcher, I aim to build scalable methods that are effective in practice and deliver real-world impact.</p>
+
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <div class="title">
+                        🔥 Open-dCoder: The First Fully Open Diffusion LLM for Code
+                    </div>
+                    <div class="description">
+                        A 0.5B diffusion coding model with pretraining pipeline, inference code, checkpoints, and evaluation suite.
+                    </div>
+                    <div class="project-links">
+                        <a href="https://oval-shell-31c.notion.site/Open-Diffusion-Large-Language-Model-25e03bf6136480b7a4ebe3d53be9f68a?pvs=74" target="_blank">📝 Notion Blog</a>
+                        <span>|</span>
+                        <a href="https://github.com/pengzhangzhi/Open-dLLM/tree/main" target="_blank">💻 GitHub</a>
+                        <img src="https://img.shields.io/github/stars/pengzhangzhi/Open-dLLM?style=flat&logo=github" alt="GitHub stars">
+                    </div>
+                    <div class="periodical">
+                        <em>Open Source Project</em>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Preprints</h2>
+            <div class="publications">
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/abs/2608.18597">Off-Manifold Collapse in Guided Protein Language Models</a></div>
+                    <div class="author"><strong>Shuibai Zhang*</strong>, Xinchi Liu*, Fred Zhangzhi Peng, Zhihan Yang, Shutong Wu, Yingzi Ma, Jiawei Zhang</div>
+                    <div class="periodical">
+                        <em>ArXiv</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/abs/2608.12149">Massive Activations in Hybrid Linear Attention Large Language Models: Pre-Attention Spikes and Inter-Spike Plateaus</a></div>
+                    <div class="author">Zunhai Su, Bohan Sun, Xialie Zhuang, <strong>Shuibai Zhang</strong>, He Xiao, Jing Xiong, Hengyuan Zhang, Zhongzhu Zhou, Tiantian Zhang, Ngai Wong, Chuan-Wei Kuo</div>
+                    <div class="periodical"><em>ArXiv</em></div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/abs/2604.11978">The Long-Horizon Task Mirage? Diagnosing Where and Why Agentic Systems Break</a></div>
+                    <div class="author">Xinyu Jessica Wang, Haoyue Bai, Yiyou Sun, Haorui Wang, <strong>Shuibai Zhang</strong>, Wenjie Hu, Mya Schroder, Bilge Mutlu, Dawn Song, Robert D Nowak</div>
+                    <div class="periodical"><em>ArXiv</em></div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/pdf/2512.15596">Corrective Diffusion Language Model</a></div>
+                    <div class="author"><strong>Shuibai Zhang</strong>, Fred Zhangzhi Peng, Yiheng Zhang, Jin Pan, Grigorios G Chrysos</div>
+                    <div class="periodical"><em>ArXiv</em></div>
+                </div>
+            </div>
+
+            <h2>Papers</h2>
+            <div class="publications">
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/pdf/2605.18530">Continuous Diffusion Scales Competitively with Discrete Diffusion for Language</a></div>
+                    <div class="author">Zhihan Yang, Wei Guo, <strong>Shuibai Zhang</strong>, Subham Sekhar Sahoo, Yongxin Chen, Arash Vahdat, Morteza Mardani, John Thickstun</div>
+                    <div class="periodical">
+                        <em>COLM 2026 Workshop on Non-Autoregressive Language Models <strong>Oral Presentation</strong></em>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/abs/2604.01622">Expert-Choice Routing Enables Adaptive Computation in Diffusion Language Models</a></div>
+                    <div class="author"><strong>Shuibai Zhang*</strong>, Caspian Zhuang*, Chihan Cui*, Zhihan Yang, Fred Zhangzhi Peng, Yanxin Zhang, Haoyue Bai, Zack Jia, Yang Zhou, Guanhua Chen, Ming Liu</div>
+                    <div class="periodical">
+                        <em>COLM 2026</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://www.arxiv.org/pdf/2512.00831">ReJump: A Tree-Jump Representation for Analyzing and Improving LLM Reasoning</a></div>
+                    <div class="author">Yuchen Zeng*, <strong>Shuibai Zhang*</strong>, Wonjun Kang*, Shutong Wu, Lynnix Zou, Ying Fan, Heeju Kim, Ziqian Lin, Jungtaek Kim, Hyung Il Koo, Dimitris Papailiopoulos, Kangwook Lee</div>
+                    <div class="periodical">
+                        <em>ICML 2026</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://openreview.net/forum?id=eiOwyAa2O1">Is the Importance Ratio Necessary for Stable Reinforcement Learning in LLMs?</a></div>
+                    <div class="author"><strong>Shuibai Zhang*</strong>, Junhyuck Kim*, Gyeongman Kim, Jaewoong Cho</div>
+                    <div class="periodical">
+                        <em>ICLR 2026 (SPOT Workshop: Scaling Post-training for LLMs)</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://www.arxiv.org/pdf/2509.23405">Planner Aware Path Learning in Diffusion Language Models Training</a></div>
+                    <div class="author">Fred Zhangzhi Peng, Zachary Bezemek, Jarrid Rector-Brooks, <strong>Shuibai Zhang</strong>, Anru R. Zhang, Michael Bronstein, Avishek Joey Bose, Alexander Tong</div>
+                    <div class="periodical">
+                        <em>ICLR 2026 <strong>Oral Presentation</strong></em>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/pdf/2510.04767">ParallelBench: Understanding the Tradeoffs of Parallel Decoding in Diffusion LLMs</a></div>
+                    <div class="author">Wonjun Kang, Kevin Galim, Seunghyuk Oh, Minjae Lee, Yuchen Zeng, <strong>Shuibai Zhang</strong>, Coleman Hooper, Yuezhou Hu, Hyung Il Koo, Nam Ik Cho, Kangwook Lee</div>
+                    <div class="periodical"><em>ICLR 2026</em></div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/pdf/2512.04459v1">dVLM-AD: Enhance Diffusion Vision-Language-Model for Driving via Controllable Reasoning</a></div>
+                    <div class="author">Yingzi Ma, Yulong Cao, Wenhao Ding, <strong>Shuibai Zhang</strong>, Yan Wang, Boris Ivanovic, Ming Jiang, Marco Pavone, Chaowei Xiao</div>
+                    <div class="periodical"><em>CVPR 2026 Findings</em></div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/pdf/2502.06737">VersaPRM: Multi-Domain Process Reward Model via Synthetic Reasoning Data</a></div>
+                    <div class="author">Thomas Zeng, <strong>Shuibai Zhang</strong>, Shutong Wu, Christian Classen, Daewon Chae, Ethan Ewer, Minjae Lee, Heeju Kim, Wonjun Kang, Jackson Kunde, Ying Fan, Jungtaek Kim, Hyung Il Koo, Kannan Ramchandran, Dimitris Papailiopoulos, Kangwook Lee</div>
+                    <div class="periodical"><em>ICML 2025 <strong>Oral Presentation</strong></em></div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/pdf/2410.08695">Dynamic Multimodal Evaluation with Flexible Complexity by Vision-Language Bootstrapping</a></div>
+                    <div class="author">Yue Yang*, <strong>Shuibai Zhang*</strong>, Wenqi Shao*, Kaipeng Zhang, Yi Bin, Yu Wang, Ping Luo</div>
+                    <div class="periodical">
+                        <em>ICLR 2025 <strong>Oral Presentation</strong></em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/pdf/2406.07230v1">Needle In A Multimodal Haystack</a></div>
+                    <div class="author">Weiyun Wang*, <strong>Shuibo Zhang*</strong>, Yiming Ren*, Yuchen Duan*, Tiantong Li*, Shuo Liu, Mengkang Hu, Zhe Chen, Kaipeng Zhang, Lewei Lu, Xizhou Zhu, Ping Luo, Yu Qiao, Jifeng Dai, Wenqi Shao, Wenhai Wang</div>
+                    <div class="periodical">
+                        <em>NIPS 2024</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/pdf/2312.15918">Supervised Knowledge Makes Large Language Models Better In-Context Learners</a></div>
+                    <div class="author">Linyi Yang*, <strong>Shuibai Zhang*</strong>, Zhuohao Yu*, Guangsheng Bao, Yidong Wang, Jindong Wang, Ruochen Xu, Wei Ye, Xing Xie, Weizhu Chen, Yue Zhang</div>
+                    <div class="periodical">
+                        <em>ICLR 2024</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+                <div class="publication">
+                    <div class="title"><a href="https://arxiv.org/pdf/2211.08073">GLUE-X: Evaluating Natural Language Understanding Models from an Out-of-distribution Generalization Perspective</a></div>
+                    <div class="author">Linyi Yang*, <strong>Shuibai Zhang*</strong>, Libo Qin, Yafu Li, Yidong Wang, Hanmeng Liu, Jindong Wang, Xing Xie, Yue Zhang</div>
+                    <div class="periodical"><em>ACL 2023 Findings</em>
+                        <span class="equal-contribution">equal contribution</span>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+            <h2>Teaching Experience</h2>
+            <div class="experience">
+                <div class="job">
+                    <div class="title">Teaching Assistant - COMP SCI 220 Data Science Programming I</div>
+                    <div class="location">University of Wisconsin-Madison</div>
+                    <div class="date">Spring 2025, Fall 2025 and Spring 2026</div>
+                </div>
+                <div class="job">
+                    <div class="title">Teaching Assistant - COMP SCI 300 Programming II</div>
+                    <div class="location">University of Wisconsin-Madison</div>
+                    <div class="date">Fall 2024</div>
+                </div>
+            </div>
+
+            <h2>Services</h2>
+            <div class="experience">
+                <div class="job">
+                    <div class="title">Reviewer</div>
+                    <div class="location">NeurIPS, ICML, ICLR, ACL, ECCV</div>
+                </div>
+            </div>
+
+<!--             <h2>Values</h2> -->
+<!-- <p>
+    I'm not the kind of person who sits back and waits for things to happen — when I see an opportunity, I fight for it; when I face difficulties, I confront them head-on. I strive to create work that drives real <strong>impact</strong> — not just technical novelty, but ideas that matter. My goal is to push boundaries in ways that make a meaningful difference.
+</p> -->
+        </div>
+    </div>
+</body>
+</html>
