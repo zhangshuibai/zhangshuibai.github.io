@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scientific discovery is the next bottleneck for intelligence — Shuibai Zhang</title>
+<meta name="description" content="Post-training climbed maths, code and tool use on process data written by humans or synthesised under their direction. The research rung has no such corpus. To keep improving, models have to do science — which makes discovery AI's own bottleneck, not an application of it.">
+<meta name="theme-color" content="#f6f3ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shuibai Zhang">
+<meta property="og:title" content="Scientific discovery is the next bottleneck for intelligence">
+<meta property="og:description" content="Post-training climbed maths, code and tool use on process data written by humans or synthesised under their direction. The research rung has no such corpus. To keep improving, models have to do science — which makes discovery AI's own bottleneck, not an application of it.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Scientific discovery is the next bottleneck for intelligence — a position by Shuibai Zhang">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Scientific discovery is the next bottleneck for intelligence">
+<meta name="twitter:description" content="Post-training climbed maths, code and tool use on process data written by humans or synthesised under their direction. The research rung has no such corpus. To keep improving, models have to do science — which makes discovery AI's own bottleneck, not an application of it.">
+<meta name="twitter:image:alt" content="Scientific discovery is the next bottleneck for intelligence — a position by Shuibai Zhang">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#f6f3ec;
+    --ink:#16130f;
+    --ink-2:#403a32;
+    --ink-3:#6b645a;
+    --ink-4:#a09889;
+    --rule:#d8d2c6;
+    --rule-2:#e7e2d7;
+    --wash:#ece7db;
+    --accent:#d1401a;
+    --accent-ink:#b4360e;
+    --accent-wash:#f5e2d8;
+    --display:"Fraunces","Iowan Old Style","Palatino Linotype",Georgia,serif;
+    --text:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+    --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#131210; --ink:#ebe6db; --ink-2:#cbc4b7; --ink-3:#9a9285; --ink-4:#6e685e;
+      --rule:#2e2b26; --rule-2:#23201c; --wash:#1c1a17;
+      --accent:#ff6c3e; --accent-ink:#ff7f57; --accent-wash:#2c1a12;
+    }
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--text);font-size:19px;line-height:1.6;
+    font-optical-sizing:auto;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
+  .page{max-width:1160px;margin:0 auto;padding:0 32px}
+  a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-4);text-underline-offset:3px;text-decoration-thickness:1px}
+  a:hover{text-decoration-color:var(--accent)}
+  p{margin:0 0 24px}
+  strong{font-weight:600}
+  em{font-style:italic}
+  ::selection{background:var(--accent);color:#fff}
+
+  /* ---------- masthead ---------- */
+  .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0 0;
+    font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--ink-3)}
+  .top a{color:var(--ink-3);text-decoration:none}
+  .top a:hover{color:var(--ink)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(56px,9vw,112px) 0 0}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 28px}
+  h1{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(44px,7.9vw,106px);line-height:.98;letter-spacing:-.028em;
+    margin:0 0 36px;max-width:1040px;text-wrap:balance;
+  }
+  h1 .l2{font-style:italic;font-weight:400;color:var(--accent);letter-spacing:-.02em}
+  .standfirst{
+    font-size:clamp(20px,2.35vw,25px);line-height:1.42;color:var(--ink-2);
+    max-width:800px;margin:0 0 34px;
+  }
+  .byline{font-family:var(--mono);font-size:13px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:8px 26px;margin:0 0 54px}
+  .byline b{font-weight:500;color:var(--ink)}
+
+  .pulse{display:flex;align-items:center;margin:0 0 44px}
+  .pulse::before,.pulse::after{content:"";flex:1;height:1px;background:var(--rule)}
+  .pulse svg{width:140px;height:32px;flex:none;display:block}
+
+  /* ---------- the argument in five lines ---------- */
+  .tldr{max-width:660px;margin:0 0 88px}
+  .tldr .hd{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+  .tldr ol{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr}
+  .tldr li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:8px;padding:11px 0 12px;border-top:1px solid var(--rule);
+    font-size:17.5px;line-height:1.4}
+  .tldr li:nth-child(n+3){border-top:1px solid var(--rule)}
+  .tldr li a{text-decoration:none;color:var(--ink)}
+  .tldr li a:hover{color:var(--accent-ink)}
+  .tldr .n{font-family:var(--display);font-style:italic;color:var(--accent);font-size:21px;line-height:1.05;padding-top:2px}
+
+  /* ---------- sections with a numbered rail ---------- */
+  main{padding-bottom:24px}
+  .sec{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:28px;scroll-margin-top:24px}
+  .sec + .sec{margin-top:96px}
+  .rail{position:sticky;top:24px;align-self:start;padding-top:8px}
+  .rail .num{font-family:var(--display);font-weight:400;font-size:64px;line-height:.9;letter-spacing:-.04em;color:var(--accent);display:block}
+  .rail .lab{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-4);display:block;margin-top:14px;line-height:1.5}
+  .body{min-width:0}
+  .sec h2{
+    font-family:var(--display);font-weight:500;font-size:clamp(28px,3.5vw,40px);
+    line-height:1.1;letter-spacing:-.022em;margin:0 0 30px;max-width:720px;text-wrap:balance;
+  }
+  .sec p,.sec ul,.sec ol{max-width:660px}
+  .sec > .body > p:first-of-type{font-size:20.5px}
+
+  /* citations */
+  sup.c{font-family:var(--mono);font-size:11px;line-height:0;vertical-align:super;letter-spacing:-.02em}
+  sup.c a{color:var(--accent-ink);text-decoration:none;padding:0 1px}
+  sup.c a:hover{text-decoration:underline}
+
+  /* ---------- figures ---------- */
+  figure{margin:48px 0;max-width:820px;padding:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+  figure svg{display:block;width:100%;height:auto;padding:16px 0 4px}
+  figure svg.fig-ph{display:none;max-width:420px}
+  .fig-ph .ftt{font-size:17.5px}
+  figcaption{font-size:15.5px;line-height:1.55;color:var(--ink-3);padding:6px 0 20px;max-width:700px}
+  figcaption .lbl{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-right:6px}
+
+  /* svg text + shape tokens (shared by both figures) */
+  .fk{font-family:var(--mono);font-size:11px;letter-spacing:.18em;fill:var(--accent-ink)}
+  .ftt{font-family:var(--display);font-size:20px;font-weight:500;fill:var(--ink);letter-spacing:-.01em}
+  .fl{font-family:var(--display);font-size:22px;font-weight:600;fill:var(--ink);letter-spacing:-.01em}
+  .fl2{font-family:var(--display);font-size:18px;font-weight:600;fill:var(--ink)}
+  .fm{font-family:var(--mono);font-size:12.5px;fill:var(--ink-3)}
+  .fm11{font-family:var(--mono);font-size:11px;fill:var(--ink-3)}
+  .fms{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;fill:var(--ink-4)}
+  .fsrc{font-family:var(--mono);font-size:10px;fill:var(--ink-4);letter-spacing:.04em}
+  .fa{fill:var(--accent)}
+  .fai{fill:var(--accent-ink)}
+  .f3{fill:var(--ink-3)}
+  .sk{stroke:var(--ink-3);fill:none;stroke-width:1.4}
+  .sk4{stroke:var(--ink-4);fill:none;stroke-width:1}
+  .ska{stroke:var(--accent);fill:none;stroke-width:2.2}
+  .fillwash{fill:var(--wash)}
+  .fillaw{fill:var(--accent-wash)}
+  .fillink{fill:var(--ink)}
+  .fdot{fill:var(--ink-3)}
+  .ftrace{stroke:var(--ink-3);stroke-width:1.2;opacity:.75}
+
+  /* ---------- the scoreboard ---------- */
+  .score{max-width:820px;margin:44px 0 40px;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding:20px 0 4px}
+  .score .hd{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 8px}
+  .score .ttl{font-family:var(--display);font-size:24px;font-weight:500;line-height:1.2;letter-spacing:-.012em;margin:0 0 22px;max-width:700px}
+  .score .grid{display:grid;grid-template-columns:repeat(3,1fr);column-gap:28px}
+  .score .cell{border-top:1px solid var(--rule);padding:14px 0 20px}
+  .score .bench{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);display:block;margin-bottom:10px}
+  .score .n{font-family:var(--display);font-weight:400;font-size:56px;line-height:1;letter-spacing:-.035em;color:var(--accent);display:block}
+  .score .k{font-size:15px;line-height:1.45;color:var(--ink-3);display:block;margin-top:12px}
+  .score .k a{color:var(--ink-3)}
+
+  /* ---------- aside ---------- */
+  .note{border-left:3px solid var(--accent);padding:2px 0 2px 24px;margin:36px 0;max-width:660px;color:var(--ink-2);font-size:20px;line-height:1.5}
+  .note p:last-child{margin-bottom:0}
+
+  /* ---------- the four challenges ---------- */
+  .ch{border-top:1px solid var(--ink);padding:26px 0 6px;max-width:760px;display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:22px;scroll-margin-top:24px}
+  .ch + .ch{margin-top:14px}
+  .ch .ix{font-family:var(--display);font-style:italic;font-weight:400;font-size:46px;line-height:.9;color:var(--accent);letter-spacing:-.03em}
+  .ch .ix small{display:block;font-family:var(--mono);font-style:normal;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4);margin-top:12px}
+  .ch h3{font-family:var(--display);font-weight:600;font-size:24px;line-height:1.2;letter-spacing:-.012em;margin:8px 0 14px;text-wrap:balance}
+  .ch p{max-width:640px}
+
+  /* ---------- references ---------- */
+  .refs{border-top:1px solid var(--ink);margin-top:88px;padding-top:26px;max-width:820px}
+  .refs h2{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin:0 0 16px}
+  .refs ol{list-style:none;padding:0;margin:0;counter-reset:ref}
+  .refs li{counter-increment:ref;display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:10px;
+    font-size:14.5px;line-height:1.5;color:var(--ink-3);padding:8px 0;border-top:1px solid var(--rule-2);scroll-margin-top:24px}
+  .refs li::before{content:"[" counter(ref) "]";font-family:var(--mono);font-size:12px;color:var(--ink-4);padding-top:2px}
+  .refs li:target{background:var(--accent-wash)}
+  .refs a{color:var(--ink-2);overflow-wrap:anywhere}
+
+  footer{border-top:1px solid var(--ink);margin-top:72px;padding:22px 0 80px;
+    font-family:var(--mono);font-size:13px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px 22px}
+  footer a{color:var(--ink-3)}
+  footer a:hover{color:var(--ink)}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:760px){
+    .sec{display:block}
+    .sec + .sec{margin-top:72px}
+    .rail{position:static;display:flex;align-items:baseline;gap:14px;padding:0;margin-bottom:14px}
+    .rail .num{font-size:34px}
+    .rail .lab{margin-top:0}
+    .tldr ol{grid-template-columns:1fr}
+    .ch{display:block}
+    .ch .ix{font-size:34px;display:flex;align-items:baseline;gap:14px}
+    .ch .ix small{margin-top:0}
+  }
+  @media (max-width:640px){
+    body{font-size:17.5px}
+    .page{padding:0 18px}
+    .top{padding-top:16px}
+    .hero{padding-top:44px}
+    h1{margin-bottom:26px}
+    .standfirst{margin-bottom:26px}
+    .byline{margin-bottom:40px}
+    .tldr{margin-bottom:64px}
+    .tldr li{font-size:16.5px}
+    .sec > .body > p:first-of-type{font-size:18.5px}
+    .sec h2{margin-bottom:22px}
+    figure{margin:36px 0}
+    figure svg.fig-wide{display:none}
+    figure svg.fig-ph{display:block}
+    figcaption{font-size:14.5px}
+    .score .grid{grid-template-columns:1fr;column-gap:18px}
+    .score .n{font-size:44px}
+    .score .k{font-size:14px}
+    .note{font-size:18px;padding-left:18px}
+    .refs li{font-size:13.5px;grid-template-columns:34px minmax(0,1fr)}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="top">
+  <a href="/">← Shuibai Zhang</a>
+  <span>Research vision</span>
+</header>
+
+<div class="hero">
+  <p class="kicker">A position on AI and science</p>
+  <h1><span class="l1">Scientific discovery is the next bottleneck</span><br><span class="l2">for intelligence.</span></h1>
+  <p class="standfirst">
+    Post-training climbed maths, code and tool use on process data written by humans or
+    synthesised under their direction, and that ladder is running out of rungs. The next rung
+    is research, and research closes the loop: a system that can do research can work on its
+    own training. That makes research plausibly the last capability we have to teach directly,
+    and discovery the bottleneck on intelligence itself, not a place to apply intelligence
+    once it is finished.
+  </p>
+  <div class="byline">
+    <span><b>Shuibai Zhang</b></span>
+    <span>September 2026</span>
+    <span>11 min read</span>
+    <span>25 references</span>
+  </div>
+</div>
+
+<div class="pulse" aria-hidden="true">
+  <svg viewBox="0 0 140 32">
+    <path d="M0 16 H44" class="sk4"/>
+    <path d="M44 16 L54 16 L62 3 L74 29 L84 16 L96 16" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M96 16 H140" class="sk4"/>
+  </svg>
+</div>
+
+<nav class="tldr" aria-label="The argument in five lines">
+  <p class="hd">The argument in five lines</p>
+  <ol>
+    <li><span class="n">01</span><a href="#s1">Post-training lived off borrowed process data that runs out at research.</a></li>
+    <li><span class="n">02</span><a href="#s2">Agents are not yet good at research.</a></li>
+    <li><span class="n">03</span><a href="#s3">AI is already accelerating science.</a></li>
+    <li><span class="n">04</span><a href="#s4">Self-improvement closes on a verifier that must be robust and cheap.</a></li>
+    <li><span class="n">05</span><a href="#s5">Four problems next: environments, verifiers, world models, failures.</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<!-- ============================ 01 ============================ -->
+<section class="sec" id="s1">
+  <div class="rail"><span class="num">01</span><span class="lab">The ceiling</span></div>
+  <div class="body">
+  <h2>Post-training has been living off process data someone else already produced.</h2>
+
+  <p>
+    Post-training gains so far form a ladder. First maths. Then code. Then tool use, the
+    agentic turn. Every rung worked for the same two reasons: a large body of human process
+    data already existed for it, or could be synthesised cheaply under human direction; and
+    the result could be checked automatically.
+  </p>
+
+  <figure>
+  <svg class="fig-wide" viewBox="0 0 600 446" role="img" aria-labelledby="f1t">
+    <title id="f1t">The post-training ladder: maths, code, tool use, research. The first three rungs are stacks of process data someone else wrote down; the research rung is an empty outline, because the research loop is almost never written down.</title>
+    <defs>
+      <pattern id="traces" width="10" height="7" patternUnits="userSpaceOnUse">
+        <line x1="0" y1="3.5" x2="10" y2="3.5" class="ftrace"/>
+      </pattern>
+      <marker id="m1i" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0 L10 5 L0 10 z" class="f3"/>
+      </marker>
+    </defs>
+
+    <text x="30" y="22" class="fk">FIG. 1 · THE LADDER</text>
+    <text x="30" y="50" class="ftt">Each rung so far had a corpus to learn from.</text>
+    <text x="30" y="74" class="ftt">The next one doesn't.</text>
+
+    <!-- rising-chain note -->
+    <path d="M40 132 L96 108" class="sk4" marker-end="url(#m1i)"/>
+    <text x="106" y="106" class="fm">each rung: a longer chain the model</text>
+    <text x="106" y="122" class="fm">closes on its own</text>
+
+    <!-- baseline -->
+    <line x1="30" y1="340" x2="570" y2="340" class="sk" stroke-width="1"/>
+
+    <!-- Maths -->
+    <rect x="30" y="270" width="120" height="70" class="fillwash"/>
+    <rect x="30" y="270" width="120" height="70" fill="url(#traces)"/>
+    <rect x="30" y="270" width="120" height="70" class="sk4"/>
+    <text x="30" y="256" class="fl">Maths</text>
+
+    <!-- Code -->
+    <rect x="170" y="230" width="120" height="110" class="fillwash"/>
+    <rect x="170" y="230" width="120" height="110" fill="url(#traces)"/>
+    <rect x="170" y="230" width="120" height="110" class="sk4"/>
+    <text x="170" y="216" class="fl">Code</text>
+
+    <!-- Tool use -->
+    <rect x="310" y="180" width="120" height="160" class="fillwash"/>
+    <rect x="310" y="180" width="120" height="160" fill="url(#traces)"/>
+    <rect x="310" y="180" width="120" height="160" class="sk4"/>
+    <text x="310" y="166" class="fl">Tool use</text>
+
+    <!-- Research: the rung with no corpus -->
+    <rect x="450" y="122" width="120" height="218" class="fillaw" opacity=".55"/>
+    <rect x="450" y="122" width="120" height="218" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="5 4"/>
+    <line x1="458" y1="331" x2="562" y2="331" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="2 3" opacity=".8"/>
+    <text x="510" y="214" text-anchor="middle" class="fm11 fai">the loop that</text>
+    <text x="510" y="229" text-anchor="middle" class="fm11 fai">produced each</text>
+    <text x="510" y="244" text-anchor="middle" class="fm11 fai">result is never</text>
+    <text x="510" y="259" text-anchor="middle" class="fm11 fai">written down</text>
+    <text x="450" y="108" class="fl fa">Research</text>
+
+    <!-- what each leaves behind -->
+    <text x="30" y="364" class="fms">LEAVES BEHIND</text>
+    <text x="30" y="386" class="fm">reasoning traces</text>
+
+    <text x="170" y="364" class="fms">LEAVES BEHIND</text>
+    <text x="170" y="386" class="fm">tests, compilers,</text>
+    <text x="170" y="403" class="fm">fix history</text>
+
+    <text x="310" y="364" class="fms">LEAVES BEHIND</text>
+    <text x="310" y="386" class="fm">call traces,</text>
+    <text x="310" y="403" class="fm">failures, retries</text>
+
+    <text x="450" y="364" class="fms fai">LEAVES BEHIND</text>
+    <text x="450" y="386" class="fm fai">almost nothing</text>
+    <text x="450" y="403" class="fm fai">public</text>
+  </svg>
+  <svg class="fig-ph" viewBox="0 0 360 490" role="img" aria-labelledby="f1tp">
+    <title id="f1tp">The post-training ladder: maths, code, tool use, research. The first three rungs are stacks of process data someone else wrote down; the research rung is an empty outline, because the research loop is almost never written down.</title>
+    <defs>
+      <pattern id="tracesp" width="10" height="5" patternUnits="userSpaceOnUse">
+        <line x1="0" y1="2.5" x2="10" y2="2.5" class="ftrace"/>
+      </pattern>
+    </defs>
+    <text x="20" y="20" class="fk">FIG. 1 · THE LADDER</text>
+    <text x="20" y="46" class="ftt">Each rung so far had a corpus</text>
+    <text x="20" y="68" class="ftt">to learn from. The next one doesn't.</text>
+    <text x="20" y="92" class="fm">bar length: the chain the model</text>
+    <text x="20" y="108" class="fm">closes on its own</text>
+    <text x="20" y="142" class="fl">Maths</text>
+    <rect x="140" y="124" width="60" height="24" class="fillwash"/>
+    <rect x="140" y="124" width="60" height="24" fill="url(#tracesp)"/>
+    <rect x="140" y="124" width="60" height="24" class="sk4"/>
+    <text x="20" y="170" class="fm">leaves behind: reasoning traces</text>
+    <text x="20" y="222" class="fl">Code</text>
+    <rect x="140" y="204" width="110" height="24" class="fillwash"/>
+    <rect x="140" y="204" width="110" height="24" fill="url(#tracesp)"/>
+    <rect x="140" y="204" width="110" height="24" class="sk4"/>
+    <text x="20" y="250" class="fm">leaves behind: tests, compilers, fix history</text>
+    <text x="20" y="302" class="fl">Tool use</text>
+    <rect x="140" y="284" width="150" height="24" class="fillwash"/>
+    <rect x="140" y="284" width="150" height="24" fill="url(#tracesp)"/>
+    <rect x="140" y="284" width="150" height="24" class="sk4"/>
+    <text x="20" y="330" class="fm">leaves behind: call traces, failures, retries</text>
+    <text x="20" y="382" class="fl fa">Research</text>
+    <rect x="140" y="364" width="200" height="24" class="fillaw" opacity=".55"/>
+    <rect x="140" y="364" width="200" height="24" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="5 4"/>
+    <text x="20" y="410" class="fm fai">leaves behind: almost nothing public</text>
+    <text x="20" y="427" class="fm fai">the loop that produced each result</text>
+    <text x="20" y="444" class="fm fai">is never written down</text>
+  </svg>
+  <figcaption>
+    <span class="lbl">Fig 1</span> Each rung had a corpus someone else had already generated
+    and something could check automatically. The research rung does not. The artefact worth
+    learning from is the whole design → verify → revise loop, including everything that
+    failed, and it is almost never written down.
+  </figcaption>
+  </figure>
+
+  <p>
+    My claim is that this ladder is running out of rungs of that kind. Human text, and
+    synthetic text generated under human direction, is not where the next order of magnitude
+    comes from. To keep getting smarter, models will increasingly have to train themselves.
+    A system that trains itself is doing research.
+  </p>
+
+  <p>
+    Research ability stops being one capability among many and becomes the constraint on all
+    the others. It also differs from them in kind. A system that can run the research loop
+    can point it at its own training, which makes research plausibly the <em>last</em>
+    capability we have to teach directly.
+  </p>
+
+  <p>
+    That has not happened yet, as the next section shows. But every capability so far has had
+    to be handed over. Research is the one that would end the handing over.
+  </p>
+  </div>
+</section>
+
+<!-- ============================ 02 ============================ -->
+<section class="sec" id="s2">
+  <div class="rail"><span class="num">02</span><span class="lab">The gap</span></div>
+  <div class="body">
+  <h2>Agents look like they can already do research. Every benchmark that isolates it says otherwise.</h2>
+
+  <p>
+    Frontier agents write training code, launch runs, read checkpoints and report numbers. It
+    has the shape of automated research. Measured directly, it isn't yet.
+  </p>
+
+  <div class="score">
+    <p class="hd">Measured directly</p>
+    <p class="ttl">Three benchmarks that isolate research ability.</p>
+    <div class="grid">
+      <div class="cell">
+        <span class="bench">PostTrainBench</span>
+        <span class="n">23.2%</span>
+        <span class="k">best agent post-training a base model end to end, against 51.1% for the official instruct model
+          <a href="#r1">[1]</a></span>
+      </div>
+      <div class="cell">
+        <span class="bench">AI4AI-Bench</span>
+        <span class="n">0.250</span>
+        <span class="k">best system rewriting a training <em>algorithm</em>, with hyperparameter tuning factored out (mean 0.166)
+          <a href="#r3">[3]</a></span>
+      </div>
+      <div class="cell">
+        <span class="bench">ASI-Bench</span>
+        <span class="n">26.6</span>
+        <span class="k">project-level research score once the method is no longer given, down from 50.9 with full guidance
+          <a href="#r6">[6]</a></span>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    The last is the most diagnostic. ASI-Bench<sup class="c"><a href="#r6">[6]</a></sup>
+    <em>progressively withdraws human methodological guidance inside the same project</em>:
+    the method is supplied, then only named, then left for the agent to choose. The score
+    falls by almost half as the guidance is withdrawn, step by step. The missing half was
+    the human's.
+  </p>
+
+  <p>
+    What today's models have is engineering strength, not research strength. An analysis of
+    a large corpus of released post-training
+    trajectories<sup class="c"><a href="#r2">[2]</a></sup> separates the two.
+    <strong>Execution-level</strong> capability is iterating inside a chosen strategy;
+    <strong>strategy-level</strong> capability is revising that choice as evidence arrives.
+    Agents are strong at the first. At the second, the strategy is locked in at the start of
+    the run and the entire remaining budget goes to local adjustment inside it.
+  </p>
+
+  <p>
+    That pattern is also what agents have been scoring on. Earlier suites could be won by
+    collecting more data or tuning hyperparameters, and none of them separated a change in
+    <em>how a run is executed</em> from a change in <em>how the model learns</em>. AI4AI-Bench
+    takes tuning off the table: the agent has to rewrite the training algorithm itself, and
+    the rewrite is rerun from scratch under an evaluator the agent never sees. The best
+    system closes only a small fraction of the distance between the existing algorithm and
+    the optimum.<sup class="c"><a href="#r3">[3]</a></sup>
+  </p>
+
+  <p>
+    The same analysis tries the three obvious fixes, and all three fail. Experience-driven
+    scaffolding lifts execution sharply and leaves the strategy exactly where it was. Human
+    guidance redirects the strategy, and the agent falls back into local adjustment as soon
+    as training starts. More inference compute helps on easy tasks and buys almost nothing
+    on the hardest. What is missing is not experience, guidance or reasoning compute. It is
+    a mechanism for <em>spontaneously re-evaluating the strategy mid-run</em>.
+  </p>
+
+  <div class="note">
+    <p>
+      An environment would have to teach exactly that, and it is not "write better code". It
+      is: notice, halfway through, that the plan is wrong, and change it. It cannot be learned
+      from write-ups, because a write-up is the format from which the abandoned plans have
+      been removed.
+    </p>
+  </div>
+
+  <p>
+    The environment has to be a real one: live scientific repositories, executable pipelines,
+    genuine failure. The loop closes on itself. Models need science to keep improving, and
+    the improving is itself done by doing science.
+  </p>
+  </div>
+</section>
+
+<!-- ============================ 03 ============================ -->
+<section class="sec" id="s3">
+  <div class="rail"><span class="num">03</span><span class="lab">The other direction</span></div>
+  <div class="body">
+  <h2>AI is already accelerating the rest of science.</h2>
+
+  <p>
+    The argument so far is internal to AI. The second motivation points outward, and 2026
+    made it concrete.
+  </p>
+
+  <p>
+    In mathematics, OpenAI reported a proof that solutions to the Navier–Stokes equations can
+    blow up in finite time: roughly ten thousand agents over 88 hours, plus a further 17
+    hours for a model to formalise the
+    result.<sup class="c"><a href="#r7">[7]</a></sup><sup class="c"><a href="#r8">[8]</a></sup>
+    In biology,
+    Anthropic reported that Claude produced optimised implementations of 36 open-source
+    biomolecular models in under four weeks, including a new set of triangle-attention
+    kernels, for about a 4× average speed-up.<sup class="c"><a href="#r9">[9]</a></sup> The
+    supervisors were two people with no prior kernel-engineering background.
+  </p>
+
+  <p>
+    Every lab running those models now waits a quarter as long: a compounding gain across an
+    entire field, from a capability AI already has. Science is full of bottlenecks shaped
+    like that.
+  </p>
+  </div>
+</section>
+
+<!-- ============================ 04 ============================ -->
+<section class="sec" id="s4">
+  <div class="rail"><span class="num">04</span><span class="lab">The design</span></div>
+  <div class="body">
+  <h2>Recursive self-improvement is the right shape. The verifier closes it. A world model makes the verifier affordable.</h2>
+
+  <p>
+    Human judgement is the scarcest input in the research loop. Every step that requires it
+    caps the throughput of the whole system; that is the real content of the ASI-Bench result
+    above. The design target is a loop that runs with as little human intervention as
+    possible.
+  </p>
+
+  <p>
+    Recursive self-improvement is the right shape for a boring reason: an RSI loop needs two
+    components, not an agent that is already good at the domain. A <strong>proposer</strong>
+    generates the next hypothesis. A <strong>verifier</strong> decides whether the last one
+    worked. "Accumulate experience, including failures" is an empty instruction unless
+    something can tell the loop that an attempt failed, and ideally why. Failures carry as
+    much information as successes, often more — but only once something has called them
+    failures. The verifier is not an implementation detail of the loop. It is what makes the
+    loop a loop, and its verdicts are the only signal the proposer is ever trained on. A
+    system built this way should get better at the task the longer it runs. The proposer is
+    allowed to start out poor. The verifier is not.
+  </p>
+
+  <p>
+    The loop has an obvious problem: its throughput is set by its most expensive edge, and
+    that edge is verification. Outside maths and code the verifier is rarely a unit test. It
+    is reality itself: a training run, a simulation, an assay. An agent can propose ten
+    thousand protein designs in an afternoon. Verifying ten thousand designs at the bench is
+    not an afternoon, may not be a year, and may not be affordable at all. The proposal side
+    scales and the verification side does not, and the surplus proposals are wasted.
+  </p>
+
+  <figure>
+  <svg class="fig-wide" viewBox="0 0 640 532" role="img" aria-labelledby="f2t">
+    <title id="f2t">The recursive self-improvement loop with a world model on its verification edge: a proposer generates ten thousand cheap candidates, a world model screens them down to ten survivors, the real verifier tests those against reality, and evidence comes back. Three return edges: evidence revises the candidate, evidence updates the proposer itself, and ground truth sharpens the world model.</title>
+    <defs>
+      <pattern id="dots2m" width="12" height="12" patternUnits="userSpaceOnUse">
+        <circle cx="6" cy="6" r="2.1" class="fdot"/>
+      </pattern>
+      <marker id="m2mi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0 L10 5 L0 10 z" class="f3"/>
+      </marker>
+      <marker id="m2ma" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M0 0 L10 5 L0 10 z" class="fa"/>
+      </marker>
+    </defs>
+
+    <text x="30" y="22" class="fk">FIG. 2 · THE LOOP AND THE FILTER</text>
+    <text x="30" y="50" class="ftt">One loop. The world model sits on its costly edge;</text>
+    <text x="30" y="74" class="ftt">the verdict returns to the proposer itself.</text>
+
+    <!-- Proposer -->
+    <rect x="44" y="124" width="140" height="78" rx="3" class="fillwash"/>
+    <rect x="44" y="124" width="140" height="78" rx="3" class="sk4"/>
+    <text x="114" y="154" text-anchor="middle" class="fl">Proposer</text>
+    <text x="114" y="174" text-anchor="middle" class="fm">generates the</text>
+    <text x="114" y="189" text-anchor="middle" class="fm">next hypothesis</text>
+
+    <!-- proposes -->
+    <path d="M184 163 L348 163" class="sk" marker-end="url(#m2mi)"/>
+    <text x="266" y="152" text-anchor="middle" class="fm">proposes</text>
+
+    <!-- 10^4 candidates -->
+    <text x="354" y="112" class="fl">10&#8308; candidates</text>
+    <rect x="348" y="124" width="122" height="78" fill="url(#dots2m)"/>
+    <text x="478" y="150" class="fm">cheap to generate,</text>
+    <text x="478" y="166" class="fm">worthless if</text>
+    <text x="478" y="182" class="fm">unscreened</text>
+
+    <!-- world model wedge -->
+    <path d="M354 216 L464 216 L424 320 L394 320 Z" class="fillwash"/>
+    <path d="M354 216 L464 216 L424 320 L394 320 Z" class="sk4"/>
+    <text x="409" y="252" text-anchor="middle" class="fl2">World</text>
+    <text x="409" y="272" text-anchor="middle" class="fl2">model</text>
+    <text x="478" y="232" class="fm">cheap stand-in for</text>
+    <text x="478" y="248" class="fm">the verifier: need</text>
+    <text x="478" y="264" class="fm">not be right, only</text>
+    <text x="478" y="280" class="fm">better than chance</text>
+
+    <!-- survivors -->
+    <path d="M409 320 L409 334" class="sk" marker-end="url(#m2mi)"/>
+    <circle cx="373" cy="344" r="3.2" class="fillink"/>
+    <circle cx="381" cy="344" r="3.2" class="fillink"/>
+    <circle cx="389" cy="344" r="3.2" class="fillink"/>
+    <circle cx="397" cy="344" r="3.2" class="fillink"/>
+    <circle cx="405" cy="344" r="3.2" class="fillink"/>
+    <circle cx="413" cy="344" r="3.2" class="fillink"/>
+    <circle cx="421" cy="344" r="3.2" class="fillink"/>
+    <circle cx="429" cy="344" r="3.2" class="fillink"/>
+    <circle cx="437" cy="344" r="3.2" class="fillink"/>
+    <circle cx="445" cy="344" r="3.2" class="fillink"/>
+    <text x="478" y="349" class="fl2">10&#185; survivors</text>
+    <path d="M409 352 L409 366" class="sk" marker-end="url(#m2mi)"/>
+
+    <!-- Verifier: ground truth -->
+    <rect x="317" y="372" width="184" height="104" rx="3" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+    <text x="409" y="400" text-anchor="middle" class="fl fa">Verifier</text>
+    <text x="409" y="420" text-anchor="middle" class="fm">ground truth:</text>
+    <text x="409" y="435" text-anchor="middle" class="fm">execution, simulation</text>
+    <text x="409" y="450" text-anchor="middle" class="fm">or assay</text>
+    <text x="409" y="465" text-anchor="middle" class="fm">slow · costly · final</text>
+
+    <!-- did it work? -->
+    <path d="M317 424 L190 424" class="sk" marker-end="url(#m2mi)"/>
+    <text x="253" y="413" text-anchor="middle" class="fm">did it work?</text>
+
+    <!-- Evidence -->
+    <rect x="44" y="372" width="140" height="104" rx="3" class="fillwash"/>
+    <rect x="44" y="372" width="140" height="104" rx="3" class="sk4"/>
+    <text x="114" y="414" text-anchor="middle" class="fl">Evidence</text>
+    <text x="114" y="436" text-anchor="middle" class="fm">results, and</text>
+    <text x="114" y="451" text-anchor="middle" class="fm">every failure</text>
+
+    <!-- (a) ordinary loop: evidence revises the candidate -->
+    <path d="M160 372 L347 180" class="sk" stroke-dasharray="5 4" marker-end="url(#m2mi)"/>
+    <text x="246" y="326" class="fm">ordinary loop:</text>
+    <text x="246" y="342" class="fm">revises the</text>
+    <text x="246" y="358" class="fm">candidate</text>
+
+    <!-- (b) RSI loop: evidence updates the proposer itself -->
+    <path d="M44 424 L16 424 L16 163 L43 163" class="ska" stroke-linejoin="round" marker-end="url(#m2ma)"/>
+    <text x="40" y="262" class="fm fai">RSI loop:</text>
+    <text x="40" y="280" class="fm fai">updates the</text>
+    <text x="40" y="298" class="fm fai">proposer itself</text>
+
+    <!-- (c) ground truth sharpens the world model -->
+    <path d="M409 476 L409 496 L626 496 L626 304 L436 304" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="5 4" stroke-linejoin="round" marker-end="url(#m2ma)"/>
+    <text x="626" y="516" text-anchor="end" class="fm fai">every real measurement sharpens the stand-in</text>
+  </svg>
+  <svg class="fig-ph" viewBox="0 0 360 792" role="img" aria-labelledby="f2tp">
+    <title id="f2tp">The recursive self-improvement loop with a world model on its verification edge: a proposer generates ten thousand cheap candidates, a world model screens them down to ten survivors, the real verifier tests those against reality, and evidence comes back. Three return edges: evidence revises the candidate, evidence updates the proposer itself, and ground truth sharpens the world model.</title>
+    <defs>
+      <pattern id="dots2mp" width="10" height="10" patternUnits="userSpaceOnUse">
+        <circle cx="5" cy="5" r="1.9" class="fdot"/>
+      </pattern>
+      <marker id="m2mip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 0 L10 5 L0 10 z" class="f3"/>
+      </marker>
+      <marker id="m2map" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M0 0 L10 5 L0 10 z" class="fa"/>
+      </marker>
+    </defs>
+    <text x="20" y="20" class="fk">FIG. 2 · THE LOOP AND THE FILTER</text>
+    <text x="20" y="46" class="ftt">One loop. The world model sits</text>
+    <text x="20" y="68" class="ftt">on its costly edge; the verdict</text>
+    <text x="20" y="90" class="ftt">returns to the proposer itself.</text>
+
+    <!-- (b) RSI label: flush with the left rail, tied to it by the accent leader below -->
+    <text x="16" y="118" class="fm fai">RSI loop: evidence updates</text>
+    <text x="16" y="134" class="fm fai">the proposer itself</text>
+
+    <!-- Proposer -->
+    <rect x="40" y="146" width="170" height="78" rx="3" class="fillwash"/>
+    <rect x="40" y="146" width="170" height="78" rx="3" class="sk4"/>
+    <text x="125" y="174" text-anchor="middle" class="fl">Proposer</text>
+    <text x="125" y="195" text-anchor="middle" class="fm">generates the</text>
+    <text x="125" y="210" text-anchor="middle" class="fm">next hypothesis</text>
+
+    <path d="M125 224 L125 258" class="sk" marker-end="url(#m2mip)"/>
+    <text x="135" y="246" class="fm">proposes</text>
+
+    <!-- candidates -->
+    <text x="40" y="284" class="fl">10&#8308; candidates</text>
+    <text x="40" y="301" class="fm">cheap to generate, worthless unscreened</text>
+    <rect x="40" y="314" width="170" height="60" fill="url(#dots2mp)"/>
+    <text x="222" y="322" class="fm">ordinary loop:</text>
+    <text x="222" y="337" class="fm">revises the</text>
+    <text x="222" y="352" class="fm">candidate</text>
+
+    <!-- world model wedge -->
+    <path d="M40 384 L210 384 L140 500 L110 500 Z" class="fillwash"/>
+    <path d="M40 384 L210 384 L140 500 L110 500 Z" class="sk4"/>
+    <text x="125" y="428" text-anchor="middle" class="fl2">World</text>
+    <text x="125" y="448" text-anchor="middle" class="fl2">model</text>
+    <text x="222" y="400" class="fm">stands in for</text>
+    <text x="222" y="415" class="fm">the verifier:</text>
+    <text x="222" y="430" class="fm">need not be</text>
+    <text x="222" y="445" class="fm">right, only</text>
+    <text x="222" y="460" class="fm">better than</text>
+    <text x="222" y="475" class="fm">chance</text>
+
+    <!-- survivors -->
+    <path d="M125 500 L125 514" class="sk" marker-end="url(#m2mip)"/>
+    <circle cx="89" cy="524" r="3" class="fillink"/>
+    <circle cx="97" cy="524" r="3" class="fillink"/>
+    <circle cx="105" cy="524" r="3" class="fillink"/>
+    <circle cx="113" cy="524" r="3" class="fillink"/>
+    <circle cx="121" cy="524" r="3" class="fillink"/>
+    <circle cx="129" cy="524" r="3" class="fillink"/>
+    <circle cx="137" cy="524" r="3" class="fillink"/>
+    <circle cx="145" cy="524" r="3" class="fillink"/>
+    <circle cx="153" cy="524" r="3" class="fillink"/>
+    <circle cx="161" cy="524" r="3" class="fillink"/>
+    <text x="176" y="529" class="fl2">10&#185; survivors</text>
+    <path d="M125 532 L125 546" class="sk" marker-end="url(#m2mip)"/>
+
+    <!-- Verifier: ground truth -->
+    <rect x="40" y="552" width="170" height="108" rx="3" fill="none" stroke="var(--accent)" stroke-width="1.6"/>
+    <text x="125" y="578" text-anchor="middle" class="fl fa">Verifier</text>
+    <text x="125" y="598" text-anchor="middle" class="fm">ground truth:</text>
+    <text x="125" y="613" text-anchor="middle" class="fm">execution, simulation</text>
+    <text x="125" y="628" text-anchor="middle" class="fm">or assay</text>
+    <text x="125" y="643" text-anchor="middle" class="fm">slow · costly · final</text>
+    <text x="222" y="570" class="fm fai">every real</text>
+    <text x="222" y="585" class="fm fai">measurement</text>
+    <text x="222" y="600" class="fm fai">sharpens the</text>
+    <text x="222" y="615" class="fm fai">stand-in</text>
+
+    <path d="M125 660 L125 694" class="sk" marker-end="url(#m2mip)"/>
+    <text x="135" y="682" class="fm">did it work?</text>
+
+    <!-- Evidence -->
+    <rect x="40" y="700" width="170" height="78" rx="3" class="fillwash"/>
+    <rect x="40" y="700" width="170" height="78" rx="3" class="sk4"/>
+    <text x="125" y="728" text-anchor="middle" class="fl">Evidence</text>
+    <text x="125" y="749" text-anchor="middle" class="fm">results, and</text>
+    <text x="125" y="764" text-anchor="middle" class="fm">every failure</text>
+
+    <!-- (c) ground truth sharpens the world model: right inner rail -->
+    <path d="M210 644 L332 644 L332 488 L150 488" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="5 4" stroke-linejoin="round" marker-end="url(#m2map)"/>
+    <!-- (a) ordinary loop: right outer rail, back to the candidates -->
+    <path d="M210 739 L350 739 L350 366 L201 366" class="sk" stroke-dasharray="5 4" stroke-linejoin="round" marker-end="url(#m2mip)"/>
+    <!-- (b) RSI: left rail, back to the proposer; the leader above the elbow reaches up to its label -->
+    <path d="M40 739 L16 739 L16 185 L39 185" class="ska" stroke-linejoin="round" marker-end="url(#m2map)"/>
+    <path d="M16 185 L16 142" class="ska"/>
+  </svg>
+  <figcaption>
+    <span class="lbl">Fig 2</span> Everything the proposer learns arrives as the verifier's
+    verdict, and the question is where that verdict goes. An ordinary experimental loop
+    returns a revised candidate. An RSI loop returns a revised <em>proposer</em>, which is
+    exactly the strategy-level revision that today's agents were found not to
+    do<sup class="c"><a href="#r2">[2]</a></sup>. The verifier is also the loop's expensive
+    edge, and the world model sits on that edge alone: it stands in for the verifier on most
+    candidates, turning an unaffordable verification problem into an affordable one, and the
+    ground truth that does get measured flows back to sharpen the stand-in. In ML research the
+    analogue is predicting a run's outcome without paying for
+    the run<sup class="c"><a href="#r10">[10]</a></sup><sup class="c"><a href="#r11">[11]</a></sup>;
+    in biology the canonical instance is the virtual
+    cell<sup class="c"><a href="#r12">[12]</a></sup>.
+  </figcaption>
+  </figure>
+
+  <p>
+    A <strong>world model</strong> earns its place on exactly that edge. It is not a second
+    mechanism alongside the verifier. It is a cheap approximation of the verifier: a fast
+    in-silico predictor of what the real verification would return, used to triage which
+    candidates are worth spending the real verifier on. It does not have to be right. It has
+    to be cheap and better than chance.
+  </p>
+
+  <p>
+    Biology shows what this looks like taken seriously, because there the verifier is a
+    wet-lab assay. Arc Institute's virtual-cell programme predicts what a cell does under a
+    perturbation it has never seen, so millions of perturbations can be screened before
+    anything is pipetted.<sup class="c"><a href="#r12">[12]</a></sup> Their 2026 challenge
+    raises the bar to zero-shot prediction across unseen cell
+    lines.<sup class="c"><a href="#r13">[13]</a></sup> It is the right bar: a stand-in that
+    only works on contexts the real verifier has already measured buys no new science. The
+    same structure recurs inside AI research, where the verifier is a training run: a
+    persistent model of the research process predicts what the run would show, so compute
+    goes to the experiments worth
+    running.<sup class="c"><a href="#r10">[10]</a></sup><sup class="c"><a href="#r11">[11]</a></sup>
+  </p>
+
+  <p>
+    The two pieces of the design are not peers. The verifier closes the loop, and because its
+    verdict is the only signal the proposer learns from, it is the objective the proposer is
+    optimised against. The world model is conditional. It matters where the verifier is too
+    expensive to run on every candidate; there it stands in on most of them, and each turn of
+    the loop becomes cheap enough for the loop to improve often.
+  </p>
+  </div>
+</section>
+
+<!-- ============================ 05 ============================ -->
+<section class="sec" id="s5">
+  <div class="rail"><span class="num">05</span><span class="lab">What matters next</span></div>
+  <div class="body">
+
+  <div class="ch" id="c1">
+    <div class="ix">01<small>Challenge</small></div>
+    <div>
+    <h3>Scale the scientific environments, not just the scientific data</h3>
+    <p>
+      If research ability is the constraint, the direct lever is agentic data and environments
+      drawn from real science. ScienceIDE<sup class="c"><a href="#r14">[14]</a></sup> names the
+      obstacle a <em>scientific experience bottleneck</em>: repositories encode decades of
+      method, but fragmented toolchains, implicit domain conventions and specialised
+      correctness criteria keep that knowledge from becoming learnable experience. Their answer
+      is to convert repositories into executable environments with expert-defined acceptance
+      criteria, then train on verified trajectories.
+    </p>
+    <p>
+      They also report transfer: scientific experience improved not only held-out
+      scientific-code repair but general code, reasoning and knowledge benchmarks. If that
+      holds at scale, science is not a vertical application of foundation models. It is a
+      training signal for them. The domain benchmarks show how much headroom is left: 17% on
+      real bioinformatics analyses in BixBench<sup class="c"><a href="#r15">[15]</a></sup>, and
+      the guidance-withdrawal collapse in ASI-Bench<sup class="c"><a href="#r6">[6]</a></sup>.
+    </p>
+    </div>
+  </div>
+
+  <div class="ch" id="c2">
+    <div class="ix">02<small>Challenge</small></div>
+    <div>
+    <h3>Verifiers robust enough to be optimised against</h3>
+    <p>
+      Once an agent can search against a verifier, the verifier <em>is</em> the objective.
+      Yukon<sup class="c"><a href="#r16">[16]</a></sup> shows the upside: open autoresearch
+      challenges in quantum circuit optimisation, proof-system acceleration and GPU kernels,
+      where every submission must clear a deterministic gate before it is merged, and the
+      frontier ratchets. Its ECDSA.fail challenge reports beating the Google Quantum AI
+      benchmark by 62%.
+    </p>
+    <p>
+      The downside arrives the moment the gate is weaker than the optimiser.
+      KernelBench-Verified<sup class="c"><a href="#r17">[17]</a></sup> documents frontier models
+      exploiting the narrow test distribution, in one case with a "ReLU kernel" that checks
+      whether the input shape matches the test configuration and returns the input unchanged.
+      Gimlet Labs put a number on it: KernelBench overstates correctness by
+      31%.<sup class="c"><a href="#r18">[18]</a></sup> On a benchmark that is embarrassing. In a
+      live RSI loop it is worse than embarrassing, because the false result becomes training
+      signal.
+    </p>
+    <p>
+      Fuzzing does not close this, for the reason the same write-up gives: testing can only
+      examine a finite subset of an effectively infinite space, and the agent is optimising
+      against whatever harness you chose. Formal verification has to move into the verifier
+      itself. The pieces exist. Symbolic equivalence checking of generated kernels via SMT
+      proved 16 of 26 Triton kernels and caught two that passed numeric tests while being
+      mathematically inequivalent<sup class="c"><a href="#r18">[18]</a></sup>. In
+      repository-scale joint implementation-and-proof synthesis, the best agent still only
+      closes 27 of 43 instances<sup class="c"><a href="#r19">[19]</a></sup>. There are
+      machine-checked proofs of the properties production systems actually rely on, such as
+      permutation equivariance and correctness of
+      tiling<sup class="c"><a href="#r20">[20]</a></sup>. None of them is ready to sit inside a
+      loop running millions of proposals. That gap is the problem.
+    </p>
+    </div>
+  </div>
+
+  <div class="ch" id="c3">
+    <div class="ix">03<small>Challenge</small></div>
+    <div>
+    <h3>Domain world models where feedback is genuinely expensive</h3>
+    <p>
+      In fields where a single round of feedback costs weeks and real money, wet-lab biology
+      among them, the world model is not an optimisation. It is the precondition for running
+      the loop at all. The argument in §04 takes concrete form here: a research world model
+      for the research process itself<sup class="c"><a href="#r10">[10]</a></sup>, virtual
+      cells for perturbation biology<sup class="c"><a href="#r12">[12]</a></sup><sup class="c"><a href="#r13">[13]</a></sup>,
+      and predictive architectures general enough to be retargeted across
+      domains<sup class="c"><a href="#r21">[21]</a></sup>. The open question is calibration,
+      not accuracy: a filter is useful when you know where it is trustworthy, and dangerous
+      when you don't.
+    </p>
+    </div>
+  </div>
+
+  <div class="ch" id="c4">
+    <div class="ix">04<small>Challenge</small></div>
+    <div>
+    <h3>Learning efficiently from the loop's own failures</h3>
+    <p>
+      In an unfamiliar environment an agent's first attempts are bad, and most of what the loop
+      produces is failure. An RSI system earns its name only if that exhaust becomes
+      capability. The design question is what, exactly, gets updated.
+    </p>
+    <p>
+      CAKE<sup class="c"><a href="#r22">[22]</a></sup> is the clearest worked example. It treats the compiler as part of the agent harness under
+      evolution, not a fixed black box. Recurring failures are promoted into verifier rules,
+      IR primitives, model calibrations and reusable tactics: "shrink the search space using
+      what went wrong", precisely. A parallel line of work makes the same move on the
+      model–harness pair. One alternates weight and harness
+      optimisation<sup class="c"><a href="#r23">[23]</a></sup>. Another evolves the harness,
+      retaining matched successes, regressions and near misses as verified sibling
+      trajectories for the next model update<sup class="c"><a href="#r24">[24]</a></sup>. A
+      third composes typed operators over data, harness and weights under one loop
+      kernel<sup class="c"><a href="#r25">[25]</a></sup>.
+    </p>
+    <p>
+      What I take from these is that the unit of self-improvement is not the model. It is the
+      whole system: model, harness, verifier, search space. The open problem is how to
+      co-evolve them without the loop quietly optimising one of its own measuring instruments.
+    </p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="refs">
+<h2>References</h2>
+<ol>
+  <li id="r1"><span>PostTrainBench: Can LLM Agents Automate LLM Post-Training? <a href="https://arxiv.org/abs/2603.08640">arXiv:2603.08640</a> · ICML 2026</span></li>
+  <li id="r2"><span>Lim, Huang, Peng, Lu, Cong, Zhang, Sun, Lin. What is Missing from AI Post-Training AI: An Empirical Analysis. <a href="https://arxiv.org/abs/2608.19072">arXiv:2608.19072</a></span></li>
+  <li id="r3"><span>AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement. <a href="https://arxiv.org/abs/2608.20318">arXiv:2608.20318</a></span></li>
+  <li id="r4"><span>Terminal-Bench-Science 0.1. <a href="https://www.tbench.ai/news/terminal-bench-science-0-1">tbench.ai</a></span></li>
+  <li id="r5"><span>SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science? <a href="https://arxiv.org/abs/2608.19799">arXiv:2608.19799</a></span></li>
+  <li id="r6"><span>ASI-Bench: At the Dawn of Artificial Superintelligence. <a href="https://arxiv.org/abs/2608.17271">arXiv:2608.17271</a></span></li>
+  <li id="r7"><span>OpenAI. On the Navier–Stokes Millennium Prize Problem. <a href="https://openai.com/index/navier-stokes-solution/">openai.com</a>, Sept 2026</span></li>
+  <li id="r8"><span>OpenAI claims huge maths breakthrough on a famed 'Millennium Problem'. <a href="https://www.nature.com/articles/d41586-026-02842-5">Nature</a>, 2026</span></li>
+  <li id="r9"><span>Anthropic. How Claude is uplifting biomolecular modeling. <a href="https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling">anthropic.com</a>, Sept 2026</span></li>
+  <li id="r10"><span>AI Should Build Its Own Research World Model. <a href="https://www.agenticresearch.sh/blog/research-world-model">Agent Native Research</a></span></li>
+  <li id="r11"><span>Scaling Automatic Research Agents via World Models. <a href="https://arxiv.org/abs/2608.12564">arXiv:2608.12564</a></span></li>
+  <li id="r12"><span>Arc Institute. Virtual Cell Initiative. <a href="https://arcinstitute.org/virtual-cell-initiative">arcinstitute.org</a></span></li>
+  <li id="r13"><span>Arc Institute. The 2026 Virtual Cell Challenge. <a href="https://arcinstitute.org/news/virtual-cell-challenge-2026">arcinstitute.org</a></span></li>
+  <li id="r14"><span>ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments. <a href="https://arxiv.org/abs/2609.19134">arXiv:2609.19134</a></span></li>
+  <li id="r15"><span>BixBench: A Comprehensive Benchmark for LLM-based Agents in Computational Biology. <a href="https://arxiv.org/abs/2503.00096">arXiv:2503.00096</a></span></li>
+  <li id="r16"><span>Yukon — the platform for open frontier research. <a href="https://www.yukon.org/">yukon.org</a></span></li>
+  <li id="r17"><span>KernelBench-Verified: Do LLM-Generated Kernels Actually Beat PyTorch? <a href="https://arxiv.org/abs/2607.16241">arXiv:2607.16241</a></span></li>
+  <li id="r18"><span>Taneja, St John, Serrino. Formally Verifying AI-Generated GPU Kernels. <a href="https://gimletlabs.ai/blog/formally-verifying-ai-generated-kernels">Gimlet Labs</a></span></li>
+  <li id="r19"><span>Vero: Can AI Agents Build Formally Verified Software Repositories? <a href="https://arxiv.org/abs/2608.13522">arXiv:2608.13522</a></span></li>
+  <li id="r20"><span>Rush, S. Lean Verified Transformers. <a href="https://srush.github.io/lean-transformer/">srush.github.io</a></span></li>
+  <li id="r21"><span>JEPA-Anything: Learning Predictive Models across Different Worlds. <a href="https://arxiv.org/abs/2609.20800">arXiv:2609.20800</a></span></li>
+  <li id="r22"><span>CAKE: Compiler–Agent Co-Design for Frontier Kernel Evolution. <a href="https://arxiv.org/abs/2608.12629">arXiv:2608.12629</a></span></li>
+  <li id="r23"><span>WHALE: A Simple Recipe for Joint Harness-Weight Optimization. <a href="https://arxiv.org/abs/2609.00196">arXiv:2609.00196</a></span></li>
+  <li id="r24"><span>HELIX: Model–Harness Co-evolution for Recursive Self-Improvement. <a href="https://arxiv.org/abs/2608.13951">arXiv:2608.13951</a></span></li>
+  <li id="r25"><span>MetaRSI-v1: A Meta-Recursive Self-Improving System for Recursive Self-Improving Systems Themselves. <a href="https://cosmosmind.ai/research/metarsi-v1">CosmosMind</a>, Sept 2026</span></li>
+</ol>
+</div>
+
+</main>
+
+<footer>
+  <span>Shuibai Zhang</span>
+  <a href="/">homepage</a>
+  <a href="/blog/">blog</a>
+  <a href="https://scholar.google.com/citations?user=jkXzD7YAAAAJ&amp;hl=en">Google Scholar</a>
+</footer>
+
+</div>
+</body>
+</html>
