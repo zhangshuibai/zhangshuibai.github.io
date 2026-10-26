@@ -318,6 +318,18 @@
             color: #888;
             font-style: italic;
         }
+        .projects .x-stats {
+            display: inline-flex;
+            gap: 10px;
+            color: #666;
+            font-size: 0.75rem;
+        }
+        .projects .x-stats[hidden] {
+            display: none;
+        }
+        .projects .x-stats i {
+            margin-right: 3px;
+        }
 
 
         /* Experience styles */
@@ -577,6 +589,11 @@
                     </div>
                     <div class="project-links">
                         <a href="https://x.com/ShuibaiZ69721/status/2114380166910861632" target="_blank"><i class="fab fa-x-twitter"></i> Post</a>
+                        <span class="x-stats" data-x-post="2114380166910861632" hidden>
+                            <span title="Views"><i class="far fa-eye"></i><span data-metric="views"></span></span>
+                            <span title="Likes"><i class="far fa-heart"></i><span data-metric="likes"></span></span>
+                            <span title="Bookmarks"><i class="far fa-bookmark"></i><span data-metric="bookmarks"></span></span>
+                        </span>
                         <span>|</span>
                         <a href="https://github.com/zhangshuibai/molten" target="_blank">💻 GitHub</a>
                         <img src="https://img.shields.io/github/stars/zhangshuibai/molten?style=flat&logo=github" alt="GitHub stars">
@@ -751,5 +768,22 @@
 </p> -->
         </div>
     </div>
+    <script>
+        // Live view, like and bookmark counts for X posts, via the FxTwitter API.
+        document.querySelectorAll('[data-x-post]').forEach(function (el) {
+            fetch('https://api.fxtwitter.com/status/' + el.dataset.xPost)
+                .then(function (r) { return r.json(); })
+                .then(function (d) {
+                    var fmt = new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 });
+                    var metrics = el.querySelectorAll('[data-metric]');
+                    for (var i = 0; i < metrics.length; i++) {
+                        if (typeof d.tweet[metrics[i].dataset.metric] !== 'number') return;
+                    }
+                    metrics.forEach(function (m) { m.textContent = fmt.format(d.tweet[m.dataset.metric]); });
+                    el.hidden = false;
+                })
+                .catch(function () {});
+        });
+    </script>
 </body>
 </html>
